@@ -41,9 +41,54 @@ Urmăresc instrucțiunile de pe ecran și completez următoarele detalii:
 
 ## 3. Cum instalez MySQL și cum creez baza de date?
 
+Cloud9 pune la dispoziție un utilitar pentru configurarea unui serviciu de MySQL denumit ***mysql-ctl***
+
+Pentru a instala și porni serverul de baze de date rulez comanda:
+
+```bash
+mysql-ctl start
+```
+
+Conectarea la baza de date se realizează executând urmatoarea comandă
+
+```bash
+mysql -u root
+```
+
+Din consola MySQL voi rula comenzi SQL. Sfârșitul unei comenzi este marcat de caracterul ***;***
+
+De exemplu pentru a crea baza de date cu numele **profile** voi executa
+
+```sql
+create database profile;
+```
+
+Notă: Acest utilitar este specific mediului Cloud9. Mai multe detalii despre instalarea și configurarea MySQL pe un alt sistem de operare în documentația oficială (https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
+
+- [ ] TODO: verifică dacă baza de date a fost creată cu succes executând ```show databases;```
+- [ ] TODO: părăsește consola mysql executând comanda ```exit```
+
 ## 4. Cum mă conectez la baza de date din NodeJS folosind Sequelize?
 
 ## 5. Cum definesc modele pentru tabele folosind Sequelize?
+
+Un model este o reprezentare a unui tabel în codul sursă al aplicației. Sequelize permite definirea de modele folosind funcția ***define()***
+
+Primul parametrul al funcției este numele tabelului. O convenție presupusă de lucru cu Sequelize este că numele tabelului va fi definit în limba engleză la plural. Al doilea parametru este un obiect care descrie structura tabelului prin perechi cheie:valoare, unde cheia este numele coloanei și valoarea este tipul de date.
+
+```js
+const Messages = sequelize.define('messages', {
+    subject: Sequelize.STRING,
+    name: Sequelize.STRING,
+    message: Sequelize.TEXT
+})
+```
+
+Mai multe detalii despre definirea de modele - http://docs.sequelizejs.com/manual/tutorial/models-definition.html
+
+Lista cu tipurile de date suportate de Sequelize - http://docs.sequelizejs.com/manual/tutorial/models-definition.html#data-types
+
+Pentru a modela o aplicație este necesar să pornești de la domeniul pe care îl adresează, să identifici entități și relații între entități, să stabilești care sunt proprietățile lor și să identifici tipurile de date corespunzătoare. Este o activitate ce se desfășoară de obicei iterativ și incremenental pe parcursul dezvoltării aplicației. Așa că Sequelize propune un mecanism automat de sincronizare a bazei de date care este descris în pasul următor.
 
 ## 6. Cum creez tabelele în baza de date folosind mecanismul de sincronizare din Sequelize?
 
