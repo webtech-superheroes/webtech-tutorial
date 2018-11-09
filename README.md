@@ -34,7 +34,7 @@ Urmăresc instrucțiunile de pe ecran și completez următoarele detalii:
 În final confrim dacă datele introduse sunt corecte. Dacă am executat comanda cu succes voi obține un fișier ***pagckage.json*** cu datele introduse.
 
 - [] TODO: verifică existența fișierului package.json
-- [] TODO: crează un ***fișier server.js***
+- [] TODO: crează un fișier ***server.js***
 
 
 ## 2. Cum construiesc un server HTTP folosind ExpressJS?
@@ -46,6 +46,10 @@ Urmăresc instrucțiunile de pe ecran și completez următoarele detalii:
 ## 5. Cum definesc modele pentru tabele folosind Sequelize?
 
 ## 6. Cum creez tabelele în baza de date folosind mecanismul de sincronizare din Sequelize?
+
+Sequelize permite sincronizarea automată a modelelor cu baza de date prin intermediul funcției ***sync()***
+
+Adădugând parametrul {force: true}
 
 ## 7. Cum expun datele dintr-un tabel folosind metoda GET?
 
