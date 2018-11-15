@@ -39,6 +39,48 @@ Urmăresc instrucțiunile de pe ecran și completez următoarele detalii:
 
 ## 2. Cum construiesc un server HTTP folosind ExpressJS?
 
+ExpressJS este un framework minimalist pentru dezvoltarea de aplicații web, mobile sau servicii web REST (API).
+
+Pentru descărca modulul și a include express în lista de dependințe execută comanda
+
+```bash
+npm install express --save
+```
+
+Editează fișierul ***server.js*** și adaugă modulul express
+
+```js
+const express = require('express')
+```
+
+Pentru a folosi Express definește o constată ```app``` astfel
+
+```js
+const app = express()
+```
+
+Pentru a servi fișiere statice precum imagini, documente html, css sau javascript folosește ```express.static```
+
+```js
+app.use('/', express.static('public'))
+```
+
+Primul parametru reprezintă calea din adresa url. Al doilea parametru este un apel al metodei ```static``` care primește calea către directorul în care sunt stocate fișierele statice.
+
+În final voi specifica portul pe care serverul va asculta cererile HTTP.
+
+```
+app.listen(8080)
+```
+
+Pentru a rula programul execut comanda ```node server.js```
+
+- [ ] TODO: crează un director denumit ```public```
+- [ ] TODO: adaugă în directorul creat un fișier ```index.html```
+- [ ] TODO: deschide în browser aplicația accesând ```localhost:8080```
+
+Notă: în Cloud9 poți obține adresa aplicației navigând în meniul de sus în secțiunea Window > Share
+
 ## 3. Cum instalez MySQL și cum creez baza de date?
 
 Cloud9 pune la dispoziție un utilitar pentru configurarea unui serviciu de MySQL denumit ***mysql-ctl***
