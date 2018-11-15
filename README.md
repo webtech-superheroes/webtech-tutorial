@@ -69,7 +69,7 @@ Primul parametru reprezintă calea din adresa url. Al doilea parametru este un a
 
 În final voi specifica portul pe care serverul va asculta cererile HTTP.
 
-```
+```js
 app.listen(8080)
 ```
 
@@ -105,12 +105,49 @@ De exemplu pentru a crea baza de date cu numele **profile** voi executa
 create database profile;
 ```
 
-Notă: Acest utilitar este specific mediului Cloud9. Mai multe detalii despre instalarea și configurarea MySQL pe un alt sistem de operare în documentația oficială (https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
+Notă: Utilitarul ```mysql-ctl``` este specific mediului Cloud9. Mai multe detalii despre instalarea și configurarea MySQL pe un alt sistem de operare în documentația oficială (https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
 
 - [ ] TODO: verifică dacă baza de date a fost creată cu succes executând ```show databases;```
 - [ ] TODO: părăsește consola mysql executând comanda ```exit```
 
 ## 4. Cum mă conectez la baza de date din NodeJS folosind Sequelize?
+
+Sequelize este o bibliotecă orientată obiect de tip ORM (object-relational mapping). Permite realizarea unei reperezentări a tabelelor din baza de date prin modele și relații între modele. Un model este un obiect ce permite operațiile standard pe baza de date (Create, Read, Update, Delete). Documentația oficială este accesibilă aici: http://docs.sequelizejs.com/
+
+Pentru a folosi Sequelize în proiect sunt necesare pachetele **sequelize** și **mysql2** pe care le vom instala prin ```npm```
+
+```bash
+npm install --save sequelize
+```
+
+```bash
+npm install --save mysql2
+```
+
+Următorul pas presupune includerea pachetului în fișierul server.js și instanțierea unui obiect ```sequelize```
+
+```js
+const Sequelize = require('sequelize')
+
+const sequelize = new Sequelize('profile', 'root', '', {
+    dialect: "mysql",
+    host: "localhost"
+})
+```
+
+Fac distincție între obiectul ```sequelize``` și clasa ```Sequelize``` scrisă cu litere mari. În contstructorul clasei primul parametru este numele bazei de date, al doilea prametru este utilizatorul și al treilea este parola. Ultimul parametru este un obiect ce descrie date despre tipul de bază de date folosit și adresa serverului.
+
+Pentru a realiza conexiunea la baza de date utilizez metoda **authenticate()**
+
+Metoda returnează un obiect de tip ```Promise``` pentru care trebuie să specific funcțiile pe care să le apeleze atunct când conexiunea se realizează cu succes, respectiv întâmpin o eroare.
+
+```js
+sequelize.authenticate().then(() => {
+    console.log("Connected to database")
+}).catch(() => {
+    console.log("Unable to connect to database")
+})
+```
 
 ## 5. Cum definesc modele pentru tabele folosind Sequelize?
 
@@ -138,11 +175,50 @@ Sequelize permite sincronizarea automată a modelelor cu baza de date prin inter
 
 Adădugând parametrul ```{force: true}``` tabelele existente vor fi șterse și vor fi create confrom definiției din model.
 
-## 7. Cum expun datele dintr-un tabel folosind metoda GET?
+Pentru a defini tabelel în baza de date expun enpoint-ul GET /createdb
 
-## 8. Cum creez o nouă înregistrare într-un tabel folosind metoda POST?
+```js
+app.get('/createdb', (request, response) => {
+    sequelize.sync({force:true}).then(() => {
+        response.status(200).send('tables created')
+    }).catch((err) => {
+        console.log(err)
+        response.status(200).send('could not create tables')
+    })
+})
+```
+
+## 7. Cum creez o nouă înregistrare într-un tabel folosind metoda POST?
+
+```
+POST /messages
+```
+
+Apelând metoda **create** Sequelize va genera automat instrucțiunea ```INSERT INTO messages (`subject`, `name`, `message`) VALUES ('test','test','test')```
+
+Dacă comanda va fi executată cu succes rezultatul va fi returnat prin functia callback definită pe metoda ```then(callback)```
+
+Dacă aplicația va întâmpina o eroare la scriere în baza de date va apela functia callback definită pe metoda ```catch(callback)```
+
+## 8. Cum expun datele dintr-un tabel folosind metoda GET?
+
+```
+GET /messages
+```
+
+```
+GET /messages/1
+```
+
 
 ## 9. Cum actualizez o înregistrare folosind metoda PUT?
 
+```
+PUT /messages/1
+```
+
 ## 10. Cum șterg o înregistrare folosind metoda DELETE?
 
+```
+DELETE /messages/1
+```
