@@ -274,8 +274,34 @@ app.get('/messages/:id', (request, response) => {
 
 ## 9. Cum actualizez o înregistrare folosind metoda PUT?
 
+Actualizarea unei resurse se realizează prin intermediul metodei PUT
+
 ```
 PUT /messages/1
+```
+
+În primul pas se interoghează baza de date. Dacă resursa nu există serverul va returna statusul 404 și mesajul „not found„. 
+
+Dacă resursa a fost găsită o actualizez apelând metoda ```update()``` cu obiectul trimis în body-ul cererii HTTP. 
+
+```js
+app.put('/messages/:id', (request, response) => {
+    Messages.findById(request.params.id).then((message) => {
+        if(message) {
+            message.update(request.body).then((result) => {
+                response.status(201).json(result)
+            }).catch((err) => {
+                console.log(err)
+                response.status(500).send('database error')
+            })
+        } else {
+            response.status(404).send('resource not found')
+        }
+    }).catch((err) => {
+        console.log(err)
+        response.status(500).send('database error')
+    })
+})
 ```
 
 ## 10. Cum șterg o înregistrare folosind metoda DELETE?
