@@ -190,6 +190,14 @@ app.get('/createdb', (request, response) => {
 })
 ```
 
+- [ ] TODO: testează dacă tabelul a fost creat executând comanda ```show tables``` în consola mysql
+
+## Metode HTTP
+
+În continuare vom dezvolta metode HTTP pentru fiecare operație Create, Read, Update, Delete
+
+![metode http](./docs/00002-arhitectura-metode-http.jpg)
+
 ## 7. Cum creez o nouă înregistrare într-un tabel folosind metoda POST?
 
 Pentru a permite crearea de înregistrări expun o metodă de tip POST. Fiecare endpoint din API-ul REST este definită de metoda HTTP și numele resursei la care se referă.
