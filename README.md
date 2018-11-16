@@ -234,6 +234,8 @@ Pentru a testa enpoint-ul creat folosim Postman.
 
 ## 8. Cum expun datele dintr-un tabel folosind metoda GET?
 
+Pentru a lista datele dintr-un tabel vom expune două enpoint-uri. Primul care returnează toată lista de mesaje și al doilea care returnează un mesaj după un ID specific.
+
 ```
 GET /messages
 ```
@@ -241,6 +243,31 @@ GET /messages
 ```
 GET /messages/1
 ```
+
+Pentru interogarea tabelului modelul sequelize expune metode precum ```findAll```, ```findById```, ```findOne```. Functia va returna un obiect de tip ```Promise``` ce va fi executat imediat ce datele sunt primite de la serverul de baze de date. Mai multe detalii despre interogari aici: http://docs.sequelizejs.com/manual/tutorial/querying.html 
+
+```js
+app.get('/messages', (request, response) => {
+    Messages.findAll().then((results) => {
+        response.status(200).json(results)
+    })
+})
+
+app.get('/messages/:id', (request, response) => {
+    Messages.findById(request.params.id).then((result) => {
+        if(result) {
+            response.status(200).json(result)
+        } else {
+            response.status(404).send('resource not found')
+        }
+    }).catch((err) => {
+        console.log(err)
+        response.status(500).send('database error')
+    })
+})
+```
+
+- [ ] TODO: testează endpoint-urile create folosind Postman
 
 
 ## 9. Cum actualizez o înregistrare folosind metoda PUT?

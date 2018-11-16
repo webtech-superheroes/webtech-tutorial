@@ -41,6 +41,25 @@ app.post('/messages', (request, response) => {
     })
 })
 
+app.get('/messages', (request, response) => {
+    Messages.findAll().then((results) => {
+        response.status(200).json(results)
+    })
+})
+
+app.get('/messages/:id', (request, response) => {
+    Messages.findById(request.params.id).then((result) => {
+        if(result) {
+            response.status(200).json(result)
+        } else {
+            response.status(404).send('resource not found')
+        }
+    }).catch((err) => {
+        console.log(err)
+        response.status(500).send('database error')
+    })
+})
+
 app.use('/', express.static('public'))
 
 app.listen(8080)
