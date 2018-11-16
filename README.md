@@ -135,7 +135,7 @@ const sequelize = new Sequelize('profile', 'root', '', {
 })
 ```
 
-Fac distincție între obiectul ```sequelize``` și clasa ```Sequelize``` scrisă cu litere mari. În contstructorul clasei primul parametru este numele bazei de date, al doilea prametru este utilizatorul și al treilea este parola. Ultimul parametru este un obiect ce descrie date despre tipul de bază de date folosit și adresa serverului.
+Fac distincție între obiectul ```sequelize``` și clasa ```Sequelize``` scrisă cu literă mare. În contstructorul clasei primul parametru este numele bazei de date, al doilea prametru este utilizatorul și al treilea este parola. Ultimul parametru este un obiect ce descrie date despre tipul de bază de date folosit și adresa serverului.
 
 Pentru a realiza conexiunea la baza de date utilizez metoda **authenticate()**
 
@@ -190,15 +190,38 @@ app.get('/createdb', (request, response) => {
 
 ## 7. Cum creez o nouă înregistrare într-un tabel folosind metoda POST?
 
+Pentru a permite crearea de înregistrări expun o metodă de tip POST. Fiecare endpoint din API-ul REST este definită de metoda HTTP și numele resursei la care se referă.
+
 ```
 POST /messages
 ```
 
-Apelând metoda **create** Sequelize va genera automat instrucțiunea ```INSERT INTO messages (`subject`, `name`, `message`) VALUES ('test','test','test')```
+Clientul va trimite datele prin cererea HTTP în format ```json``` sau ```urlencoded```. Pentru a interpreta aceste date voi adăuga două bodyParser astfel:
+
+```js
+app.use(express.json())
+app.use(express.urlencoded())
+```
+
+Conținutul trimis în body va fi accesibil pe proprietatea ```request.body``` ce va fi pasat ca parametru pentru modelul Sequelize.
+
+Apelând metoda **create** Sequelize va genera automat instrucțiunea ```INSERT INTO messages (`subject`, `name`, `message`) VALUES ('test','test','test')```. Metoda așteaptă ca parametru un obiect cu perechi cheie-valoare ce corespund fiecărei coloane din tabelă.
 
 Dacă comanda va fi executată cu succes rezultatul va fi returnat prin functia callback definită pe metoda ```then(callback)```
 
 Dacă aplicația va întâmpina o eroare la scriere în baza de date va apela functia callback definită pe metoda ```catch(callback)```
+
+```js
+app.post('/messages', (request, response) => {
+    Messages.create(request.body).then((result) => {
+        request.status(201).json(result)
+    }).catch((err) => {
+        request.status(500).send("resource not created")
+    })
+})
+```
+
+Pentru a testa enpoint-ul creat folosim Postman. 
 
 ## 8. Cum expun datele dintr-un tabel folosind metoda GET?
 
@@ -222,3 +245,7 @@ PUT /messages/1
 ```
 DELETE /messages/1
 ```
+
+## Next steps...
+
+* https://medium.com/pixelpoint/oh-man-look-at-your-api-22f330ab80d5

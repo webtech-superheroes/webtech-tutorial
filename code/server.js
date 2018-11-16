@@ -30,6 +30,17 @@ app.get('/createdb', (request, response) => {
     })
 })
 
+app.use(express.json())
+app.use(express.urlencoded())
+
+app.post('/messages', (request, response) => {
+    Messages.create(request.body).then((result) => {
+        request.status(201).json(result)
+    }).catch((err) => {
+        request.status(500).send("resource not created")
+    })
+})
+
 app.use('/', express.static('public'))
 
 app.listen(8080)
