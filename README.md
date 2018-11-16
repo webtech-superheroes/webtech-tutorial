@@ -79,7 +79,7 @@ Pentru a rula programul execut comanda ```node server.js```
 
 - [ ] TODO: crează un director denumit ```public```
 - [ ] TODO: adaugă în directorul creat un fișier ```index.html```
-- [ ] TODO: deschide în browser aplicația accesând ```localhost:8080```
+- [ ] TODO: deschide în browser aplicația accesând adresa URL
 
 Notă: în Cloud9 poți obține adresa aplicației navigând în meniul de sus în secțiunea Window > Share
 
@@ -93,7 +93,7 @@ Pentru a instala și porni serverul de baze de date rulez comanda:
 mysql-ctl start
 ```
 
-Conectarea la baza de date se realizează executând urmatoarea comandă
+Conectarea la serverul de baza de date se realizează executând urmatoarea comandă. Parametrul urmat dupa -u indică numele utilizatorului cu care mă conectez. În cazul de față este ```root``` fără parola.
 
 ```bash
 mysql -u root
@@ -151,6 +151,9 @@ sequelize.authenticate().then(() => {
 })
 ```
 
+- [ ] TODO: testează conexiunea rulând ```node server.js```
+- [ ] TODO: verifică în conoslă dacă apare mesajul **Conected to database**
+
 ## 5. Cum definesc modele pentru tabele folosind Sequelize?
 
 Un model este o reprezentare a unui tabel în codul sursă al aplicației. Sequelize permite definirea de modele folosind funcția ***define()***
@@ -200,28 +203,21 @@ app.get('/createdb', (request, response) => {
 
 ## 7. Cum creez o nouă înregistrare într-un tabel folosind metoda POST?
 
-Pentru a permite crearea de înregistrări expun o metodă de tip POST. Fiecare endpoint din API-ul REST este definită de metoda HTTP și numele resursei la care se referă.
+Pentru a permite crearea de înregistrări expun o metodă de tip POST. 
+
+Fiecare endpoint din API-ul REST este definită de metoda HTTP și numele resursei la care se referă.
 
 ```
 POST /messages
 ```
 
-Clientul va trimite datele prin cererea HTTP în format ```json``` sau ```urlencoded```. Pentru a interpreta aceste date voi adăuga două bodyParser astfel:
+Clientul va trimite datele prin cererea HTTP în format ```json``` sau ```urlencoded```. Pentru a interpreta aceste date voi adăuga două bodyParser. Apoi definesc endpoint-ul apelând functia ```app.post```.
 
 ```js
 app.use(express.json())
 app.use(express.urlencoded())
-```
 
-Conținutul trimis în body va fi accesibil pe proprietatea ```request.body``` ce va fi pasat ca parametru pentru modelul Sequelize.
-
-Apelând metoda **create** Sequelize va genera automat instrucțiunea ```INSERT INTO messages (`subject`, `name`, `message`) VALUES ('test','test','test')```. Metoda așteaptă ca parametru un obiect cu perechi cheie-valoare ce corespund fiecărei coloane din tabelă.
-
-Dacă comanda va fi executată cu succes rezultatul va fi returnat prin functia callback definită pe metoda ```then(callback)```
-
-Dacă aplicația va întâmpina o eroare la scriere în baza de date va apela functia callback definită pe metoda ```catch(callback)```
-
-```js
+//definire endpoint POST /messages
 app.post('/messages', (request, response) => {
     Messages.create(request.body).then((result) => {
         response.status(201).json(result)
@@ -230,6 +226,14 @@ app.post('/messages', (request, response) => {
     })
 })
 ```
+
+Conținutul trimis în body va fi accesibil pe proprietatea ```request.body``` ce va fi pasat ca parametru pentru modelul Sequelize în metoda create().
+
+Metoda **create** Sequelize va genera automat instrucțiunea ```INSERT INTO messages (`subject`, `name`, `message`) VALUES ('test','test','test')```.
+
+Dacă comanda va fi executată cu succes rezultatul va fi returnat prin functia callback definită pe metoda ```then(callback)```
+
+Dacă aplicația va întâmpina o eroare la scriere în baza de date va apela functia callback definită pe metoda ```catch(callback)```
 
 Pentru a testa enpoint-ul creat folosim Postman. 
 
@@ -323,7 +327,7 @@ Ultima metodă permite ștergerea unei resurse
 ```
 DELETE /messages/1
 ```
-Dacă resursa este găsită după ID, apelez metoda ```destrou```,iar sequelize va transmite către baza de date instructiunea sql ```DELETE FROM `messages` WHERE id = 1``` și va returna un obiect de tip ```Promise```. În final serverul web va raspunde cu statusul **204 NO CONTENT** semnalând că cererea a fost îndeplinită cu succes.
+Dacă resursa este găsită după ID, apelez metoda ```destroy```,iar sequelize va transmite către baza de date instructiunea sql ```DELETE FROM `messages` WHERE id = 1``` și va returna un obiect de tip ```Promise```. În final serverul web va raspunde cu statusul **204 NO CONTENT** semnalând că cererea a fost îndeplinită cu succes.
 
 ```js
 app.delete('/messages/:id', (request, response) => {
