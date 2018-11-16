@@ -214,14 +214,23 @@ Dacă aplicația va întâmpina o eroare la scriere în baza de date va apela fu
 ```js
 app.post('/messages', (request, response) => {
     Messages.create(request.body).then((result) => {
-        request.status(201).json(result)
+        response.status(201).json(result)
     }).catch((err) => {
-        request.status(500).send("resource not created")
+        response.status(500).send("resource not created")
     })
 })
 ```
 
 Pentru a testa enpoint-ul creat folosim Postman. 
+
+![postman post method](./docs/00701-postman-post.png)
+
+1. Selectează metoda POST
+2. Adaugă adresa URL a resursei
+3. În tabul body alege optiunea raw și adaugă un obiect json care descrie resursa creată
+4. Selectează tipul de continut application/json
+5. Trimite cererea HTTP apăsând butonul Send
+
 
 ## 8. Cum expun datele dintr-un tabel folosind metoda GET?
 
