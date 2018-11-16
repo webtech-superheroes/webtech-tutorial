@@ -340,4 +340,11 @@ app.delete('/messages/:id', (request, response) => {
 
 ## Next steps...
 
+Dacă ai reușit să parcurgi tutorialul până aici, în primul rând felicitări pentru efort!
+
+Iată câteva resurse care te vor ajuta să aprofundezi dezvoltarea de servicii web REST:
+
+* https://www.restapitutorial.com/
 * https://medium.com/pixelpoint/oh-man-look-at-your-api-22f330ab80d5
+* https://www.toptal.com/laravel/restful-laravel-api-tutorial
+* https://www.codementor.io/sagaragarwal94/building-a-basic-restful-api-in-python-58k02xsiq
