@@ -192,8 +192,8 @@ app.get('/createdb', (request, response) => {
     })
 })
 ```
-
-- [ ] TODO: testează dacă tabelul a fost creat executând comanda ```show tables``` în consola mysql
+- [ ] TODO: accesează din browser endpoint-ul /createdb
+- [ ] TODO: testează dacă tabelul a fost creat executând comanda ```show tables;``` în consola mysql
 
 ## Metode HTTP
 
