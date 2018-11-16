@@ -304,6 +304,10 @@ app.put('/messages/:id', (request, response) => {
 })
 ```
 
+Pașii pentru a testa metoda PUT sunt aceiași ca pentru metoda POST.
+
+![postman put](./docs/00901-postman-put.png)
+
 ## 10. Cum șterg o înregistrare folosind metoda DELETE?
 
 ```
