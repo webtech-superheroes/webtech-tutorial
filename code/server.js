@@ -35,9 +35,9 @@ app.use(express.urlencoded())
 
 app.post('/messages', (request, response) => {
     Messages.create(request.body).then((result) => {
-        request.status(201).json(result)
+        response.status(201).json(result)
     }).catch((err) => {
-        request.status(500).send("resource not created")
+        response.status(500).send("resource not created")
     })
 })
 
