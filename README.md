@@ -99,7 +99,7 @@ Conectarea la serverul de baza de date se realizează executând urmatoarea coma
 mysql -u root
 ```
 
-Din consola MySQL voi rula comenzi SQL. Sfârșitul unei comenzi este marcat de caracterul ***;***
+Din consola MySQL voi rula comenzi SQL. Sfârșitul unei comenzi este marcat de **caracterul ;**
 
 De exemplu pentru a crea baza de date cu numele **profile** voi executa
 
