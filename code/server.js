@@ -78,6 +78,24 @@ app.put('/messages/:id', (request, response) => {
     })
 })
 
+app.delete('/messages/:id', (request, response) => {
+    Messages.findById(request.params.id).then((message) => {
+        if(message) {
+            message.destroy().then((result) => {
+                response.status(204).send()
+            }).catch((err) => {
+                console.log(err)
+                response.status(500).send('database error')
+            })
+        } else {
+            response.status(404).send('resource not found')
+        }
+    }).catch((err) => {
+        console.log(err)
+        response.status(500).send('database error')
+    })
+})
+
 app.use('/', express.static('public'))
 
 app.listen(8080)

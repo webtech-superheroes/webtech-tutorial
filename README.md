@@ -310,9 +310,33 @@ Pașii pentru a testa metoda PUT sunt aceiași ca pentru metoda POST.
 
 ## 10. Cum șterg o înregistrare folosind metoda DELETE?
 
+Ultima metodă permite ștergerea unei resurse
+
 ```
 DELETE /messages/1
 ```
+Dacă resursa este găsită după ID, apelez metoda ```destrou```,iar sequelize va transmite către baza de date instructiunea sql ```DELETE FROM `messages` WHERE id = 1``` și va returna un obiect de tip ```Promise```. În final serverul web va raspunde cu statusul **204 NO CONTENT** semnalând că cererea a fost îndeplinită cu succes.
+
+```js
+app.delete('/messages/:id', (request, response) => {
+    Messages.findById(request.params.id).then((message) => {
+        if(message) {
+            message.destroy().then((result) => {
+                response.status(204).send()
+            }).catch((err) => {
+                console.log(err)
+                response.status(500).send('database error')
+            })
+        } else {
+            response.status(404).send('resource not found')
+        }
+    }).catch((err) => {
+        console.log(err)
+        response.status(500).send('database error')
+    })
+})
+```
+- [ ] TODO: testează enpoint-ul în Postman folosind metoda DELETE
 
 ## Next steps...
 
