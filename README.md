@@ -15,25 +15,27 @@ Un API RESTful reprezintă o metodă de a expune date și de a realiza operații
 
 ## 1. Cum inițializez o aplicație NodeJS?
 
-Pentru a inițializa o aplicație NodeJS execut următoarea comandă din terminal
+Pentru a inițializa o aplicație NodeJS execut următoarea comandă din terminal si completez detaliile pentru proiect
 
 ```bash
 npm init
 ```
 Urmăresc instrucțiunile de pe ecran și completez următoarele detalii:
 * Name - numele proiectului
-* Version - versiunea proiectului (default)
+* Version - versiunea proiectului (default) - trec peste apasand ENTER
 * Description - o descriere succintă
 * Entry point - fișierul care pornește aplicația: server.js
-* Test command - comanda care este executată pentru a testa aplicația
-* Git repository - dacă este cazul adresa către git
-* Keywords - cuvinte cheie care descriu aplicația
-* Author
-* License - dacă este cazul
+* Test command - trec peste apasand ENTER
+* Git repository - trec peste apasand ENTER
+* Keywords - trec peste apasand ENTER
+* Author - trec peste apasand ENTER
+* License - trec peste apasand ENTER
+
+Pe ecran va aparea un mesaj de confirmare:
 
 ![npm init](./docs/00101-npm-init.png)
 
-În final confrim dacă datele introduse sunt corecte. Dacă am executat comanda cu succes voi obține un fișier ***pagckage.json*** cu datele introduse.
+Confrim dacă datele introduse sunt corecte. Dacă am executat comanda cu succes voi obține un fișier ***pagckage.json*** cu datele introduse.
 
 - [ ] TODO: verifică existența fișierului package.json
 - [ ] TODO: crează un fișier ***server.js***
