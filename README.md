@@ -153,7 +153,7 @@ sequelize.authenticate().then(() => {
 })
 ```
 
-- [ ] TODO: testează conexiunea rulând ```node server.js```
+- [ ] TODO: testează conexiunea rulând ```server.js```
 - [ ] TODO: verifică în conoslă dacă apare mesajul **Conected to database**
 
 ## 5. Cum definesc modele pentru tabele folosind Sequelize?
