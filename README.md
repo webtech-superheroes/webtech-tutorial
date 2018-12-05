@@ -77,7 +77,7 @@ Primul parametru reprezintă calea din adresa url. Al doilea parametru este un a
 app.listen(8080)
 ```
 
-Pentru a rula programul execut comanda ```node server.js```
+Pentru a rula programul deschid fisierul ```server.js``` și apăs butonul RUN
 
 - [ ] TODO: crează un director denumit ```public```
 - [ ] TODO: adaugă în directorul creat un fișier ```index.html```
