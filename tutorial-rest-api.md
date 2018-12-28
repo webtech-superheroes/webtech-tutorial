@@ -31,10 +31,11 @@ Urmăresc instrucțiunile de pe ecran și completez următoarele detalii:
 * Author - trec peste apasand ENTER
 * License - trec peste apasand ENTER
 
-În final confrim dacă datele introduse sunt corecte. Dacă am executat comanda cu succes voi obține un fișier ***pagckage.json*** cu datele introduse.
+Pe ecran va aparea un mesaj de confirmare:
 
 ![npm init](./docs/00101-npm-init.png)
 
+Confrim dacă datele introduse sunt corecte. Dacă am executat comanda cu succes voi obține un fișier ***pagckage.json*** cu datele introduse.
 
 - [ ] TODO: verifică existența fișierului package.json
 - [ ] TODO: crează un fișier ***server.js***
@@ -76,7 +77,7 @@ Primul parametru reprezintă calea din adresa url. Al doilea parametru este un a
 app.listen(8080)
 ```
 
-Pentru a rula programul execut comanda ```node server.js```
+Pentru a rula programul deschid fisierul ```server.js``` și apăs butonul RUN
 
 - [ ] TODO: crează un director denumit ```public```
 - [ ] TODO: adaugă în directorul creat un fișier ```index.html```
@@ -152,7 +153,7 @@ sequelize.authenticate().then(() => {
 })
 ```
 
-- [ ] TODO: testează conexiunea rulând ```node server.js```
+- [ ] TODO: testează conexiunea rulând ```server.js```
 - [ ] TODO: verifică în conoslă dacă apare mesajul **Conected to database**
 
 ## 5. Cum definesc modele pentru tabele folosind Sequelize?
@@ -194,7 +195,7 @@ app.get('/createdb', (request, response) => {
 })
 ```
 - [ ] TODO: accesează din browser endpoint-ul /createdb
-- [ ] TODO: testează dacă tabelul a fost creat executând comanda ```show tables;``` în consola mysql
+- [ ] TODO: testează dacă tabelul a fost creat executând în consola mysql comenzile ```use profile``` pentru a selecta baza de date și ```show tables;``` pentru a afișa lista de tabele din baza de date
 
 ## Metode HTTP
 
