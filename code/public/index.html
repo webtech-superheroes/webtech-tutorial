@@ -1,8 +1,54 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Homepage</title>
+        <title>Message list</title>
     </head>
     <body>
-        <h1>Wellcome to the homepage</h1>
+        <h1>Messages</h1>
+
+        <table style="width:500px;">
+                <tr>
+                    <th>ID</th>
+                    <th>Subject</th>
+                    <th>Name</th> 
+                    <th>Message</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Subject data</td>
+                    <td>Name data</td>
+                    <td>Message data</td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+        </table>
+
+        <form>
+            <input type="hidden" name="id" id="id" /><br />
+            Name:<br />
+            <input type="text" name="name" id="name" /><br />
+            Subject:<br />
+            <input type="text" name="subject" id="subject"><br/>
+            Message:<br />
+            <textarea name="message" id="message"></textarea> <br/>
+            <button>Send message</button>
+            <button>Cancel</button>
+        </form>
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+        <script 
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                console.log('Hello from JQuery')
+            })
+        </script>    
     </body>
 </html>
