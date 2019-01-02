@@ -38,7 +38,7 @@ Pornim de la o structură standard a unui document HTML în care vom adăuga cod
 
 Elementele HTML necesare realizării unui tabel - https://www.w3schools.com/html/html_tables.asp
 
-În final codul pentru a reprezenta un tabel va arăta astfel:
+Codul pentru a reprezenta un tabel va arăta astfel:
 ```html
 <table style="width:100%;">
     <tr>
@@ -61,10 +61,6 @@ Elementele HTML necesare realizării unui tabel - https://www.w3schools.com/html
 </table>
 ```
 
-În final dacă deschid documentul HTML în Chrome rezultatul va arăta astfel.
-
-![html output](./docs/01101-html.png)
-
 Elementele HTML necesare realizării unui formular - https://www.w3schools.com/html/html_forms.asp 
 
 Iar codul pentru a reprezenta un formular va fi acesta:
@@ -82,6 +78,11 @@ Iar codul pentru a reprezenta un formular va fi acesta:
   <button>Cancel</button>
 </form>
 ```
+
+În final dacă deschid documentul HTML în Chrome rezultatul va arăta astfel.
+
+![html output](./docs/01101-html.png)
+
 
 Chrome îmi permite să inspectez codul sursă al unui document HTML din secțiunea Elements a consolei pentru dezvoltatori. Pentru a accesa această secțiune voi realiza combinația de taste ```Ctrl + Shift + I```
 
