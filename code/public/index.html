@@ -6,6 +6,7 @@
     <body>
         <h1>Messages</h1>
 
+        <!-- initial table structure
         <table style="width:500px;">
                 <tr>
                     <th>ID</th>
@@ -25,6 +26,9 @@
                     </td>
                 </tr>
         </table>
+        -->
+
+        <div id="table"></div>
 
         <form>
             <input type="hidden" name="id" id="id" /><br />
@@ -46,8 +50,42 @@
             crossorigin="anonymous"></script>
         
         <script type="text/javascript">
+            function showMessageList() {
+                axios.get('/messages').then(function(results) {
+                    
+                    let html = ` <table style="width:500px;">
+                            <tr>
+                                <th>ID</th>
+                                <th>Subject</th>
+                                <th>Name</th> 
+                                <th>Message</th>
+                                <th>Actions</th>
+                            </tr>`
+                    
+                    results.data.forEach(function(element) {
+                        html += `<tr>
+                                    <td>${element.id}</td>
+                                    <td>${element.name}</td>
+                                    <td>${element.subject}</td>
+                                    <td>${element.message}</td>
+                                    <td>
+                                        <button onClick="editMessage(${element.id})">Edit</button>
+                                        <button onClick="deleteMessage(${element.id})">Delete</button>
+                                    </td>
+                                </tr>`
+                    })
+
+                    html += `</table>`
+                    
+                    $('#table').html(html)
+                }).catch(function(error) {
+                    console.log(error)
+                })
+            }
+
             $(document).ready(function() {
                 console.log('Hello from JQuery')
+                showMessageList()
             })
         </script>    
     </body>

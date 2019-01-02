@@ -143,6 +143,12 @@ Având aceste elemente de bază în următoarele secțiuni vom implementa partea
 
 ## Citire și afișare date de pe server (GET)
 
+```javascript
+function showMessageList() {
+    
+}
+```
+
 ## Prelucrare date din formular
 
 ## Transmitere și salvare date (POST)
