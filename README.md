@@ -3,7 +3,7 @@
 Tutorialul este organizat în două părți:
 
 1. [Construirea unui API RESTful folosind ExpressJS](./tutorial-rest-api.md)
-2. [Construirea unei interfețe folosind HTML, JQuery, Bootstrap](./tutorial-frontend.md)
+2. [Construirea unei interfețe folosind HTML, Axios, JQuery](./tutorial-frontend.md)
 
 Codul sursă rezultat este disponiblil în directorul code.
 

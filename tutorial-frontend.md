@@ -258,7 +258,7 @@ axios.post('/messages', {
     message: message
 }).then(function(result) {
     showMessages()
-    $(event.target).reset()
+    $(event.target).trigger("reset")
 }).catch(function(err) {
     alert('Resource could not be saved')
 })
@@ -294,7 +294,7 @@ axios.put('/messages/'+id, {
     message: message
 }).then(function(result) {
     showMessages()
-    $(event.target).reset()
+    $(event.target).trigger("reset")
 }).catch(function(err) {
     alert('Resource could not be saved')
 })
