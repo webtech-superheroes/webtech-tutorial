@@ -28,20 +28,22 @@
         </table>
         -->
 
+        <form>
+                <input type="hidden" name="id" id="id" /><br />
+                Name:<br />
+                <input type="text" name="name" id="name" /><br />
+                Subject:<br />
+                <input type="text" name="subject" id="subject"><br/>
+                Message:<br />
+                <textarea name="message" id="message"></textarea> <br/>
+                <input type="submit" value="Save message">
+                <input type="reset" value="Cancel">
+        </form>
+    
+
         <div id="table"></div>
 
-        <form>
-            <input type="hidden" name="id" id="id" /><br />
-            Name:<br />
-            <input type="text" name="name" id="name" /><br />
-            Subject:<br />
-            <input type="text" name="subject" id="subject"><br/>
-            Message:<br />
-            <textarea name="message" id="message"></textarea> <br/>
-            <button>Send message</button>
-            <button>Cancel</button>
-        </form>
-
+        
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
         <script 
@@ -50,7 +52,7 @@
             crossorigin="anonymous"></script>
         
         <script type="text/javascript">
-            function showMessageList() {
+            function showMessages() {
                 axios.get('/messages').then(function(results) {
                     
                     let html = ` <table style="width:500px;">
@@ -83,9 +85,68 @@
                 })
             }
 
+            function saveMessage(event) {
+                event.preventDefault()
+                
+                
+                
+                //get values from fields
+                let id = $('#id').val()
+                let name = $('#name').val()
+                let subject = $('#subject').val()
+                let message = $('#message').val()
+                
+                if(id) {
+                    axios.put('/messages/'+id, {
+                        name: name,
+                        subject: subject,
+                        message: message
+                    }).then(function(result) {
+                        showMessages()
+                        $(event.target).reset()
+                    }).catch(function(err) {
+                        alert('Resource could not be saved')
+                    })
+                } else {
+                    //make a request to POST /messages
+                    axios.post('/messages', {
+                        name: name,
+                        subject: subject,
+                        message: message
+                    }).then(function(result) {
+                        showMessages()
+                        $(event.target).reset()
+                    }).catch(function(err) {
+                        alert('Resource could not be saved')
+                    })
+                }
+            }
+
+            function editMessage(id) {
+                //get the values from the server
+                axios.get('/messages/'+id).then(function(result) {
+                    //display values in the form
+                    $('#id').val(result.data.id)
+                    $('#name').val(result.data.name)
+                    $('#subject').val(result.data.subject)
+                    $('#message').val(result.data.mesage) 
+                }).catch(function(err) {
+                    console.log(err)
+                    alert('Could not find resource')
+                })
+            }
+
+            deleteMessage(id) {
+                axios.delete('/messages/'+id).then(function(result) {
+                    showMessages()
+                }).catch(function(err) {
+                    alert('Resource could not delete resource')
+                }) 
+            }
+
             $(document).ready(function() {
                 console.log('Hello from JQuery')
-                showMessageList()
+                showMessages()
             })
         </script>    
     </body>
