@@ -8,7 +8,7 @@ Un API RESTful reprezintă o metodă de a expune date și de a realiza operații
 
 ## Ce vei avea nevoie?
 
-* Acces la mediul de lucru Cloud9
+* Un mediul de lucru integrat (IDE) sau un editor text
 * NodeJS versiunea >= 8.9
 * O instanță de MySQL
 * Postman
@@ -81,9 +81,9 @@ Pentru a rula programul deschid fisierul ```server.js``` și apăs butonul RUN
 
 - [ ] TODO: crează un director denumit ```public```
 - [ ] TODO: adaugă în directorul creat un fișier ```index.html```
-- [ ] TODO: deschide în browser aplicația accesând adresa URL
+- [ ] TODO: deschide în browser aplicația accesând adresa URL (http://localhost:8080)
 
-Notă: în Cloud9 poți obține adresa aplicației navigând în meniul de sus în secțiunea Window > Share
+
 
 ## 3. Cum instalez MySQL și cum creez baza de date?
 
