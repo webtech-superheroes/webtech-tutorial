@@ -1,3 +1,9 @@
+# Configurarea mediului de lucru
+
+1. [Cloud9 în AWS](./c9.md)
+2. [Configurare MySQL](./mysql.md)
+3. [Cont GitHub sau alternative](./git.md)
+
 # Dezvoltarea unei aplicații web cu arhitectură fontend - backend
 
 Tutorialul este organizat în două părți:
