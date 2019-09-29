@@ -8,6 +8,10 @@ Pentru a testa că acest serviciu este pornit în terminal executăm următoarea
 sudo service mysql status
 ```
 
+![mysql status](./mysql/001-mysql-status.png)
+
+## Configurare utilizator nou
+
 Ne vom conecta la baza de date folosind userul ```root``` și apoi vom genera credențialele de autentificare pentru aplicația noastră.
 
 ```bash
@@ -28,6 +32,8 @@ GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' WITH GRANT OPTION;
 
 În final pentru a îeși din consola mysql tastează comanda ```exit```.
 
+## Conectare server mysql
+
 Acum ne vom conecta la serverul de baze de date folosind credențialele pe care tocmai le-am creat.
 
 ```bash
@@ -35,3 +41,22 @@ mysql -u username -p
 ```
 
 Parola o vom introduce după ce executăm comanda de mai sus. Caracterele nu vor fi afișate. După introducerea parolei apăsăm tasta enter.
+
+## Creare bază de date
+
+Pentru a crea o nouă baza de date executăm comanda ```CREATE DATABASE```
+
+```mysql
+CREATE DATABASE database_name;
+```
+
+Pentru a lista bazele de date disponibile executam următoarea comandă:
+
+```
+SHOW DATABASES;
+```
+![002-show-databases](./mysql/002-create-database.png)
+
+## Revenire în consola linux
+
+Pentru a părăsi utilitarul mysql, tastează comanda ```exit``` 
