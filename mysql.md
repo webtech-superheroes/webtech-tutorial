@@ -1,6 +1,6 @@
 # Configurarea serviciului mysql
 
-Serviciul ```mysql``` este cel care ne permite gestionarea bazei de date în care aplicația va stoca informații.
+Serviciul `mysql` este cel care ne permite gestionarea bazei de date în care aplicația va stoca informații.
 
 Pentru a testa că acest serviciu este pornit în terminal executăm următoarea comandă:
 
@@ -8,29 +8,29 @@ Pentru a testa că acest serviciu este pornit în terminal executăm următoarea
 sudo service mysql status
 ```
 
-![mysql status](./mysql/001-mysql-status.png)
+![mysql status](.gitbook/assets/001-mysql-status.png)
 
 ## Configurare utilizator nou
 
-Ne vom conecta la baza de date folosind userul ```root``` și apoi vom genera credențialele de autentificare pentru aplicația noastră.
+Ne vom conecta la baza de date folosind userul `root` și apoi vom genera credențialele de autentificare pentru aplicația noastră.
 
 ```bash
 sudo mysql -u root
 ```
 
-Adăugăm un nou utilizator. În exemplul de mai jos puteți inlocui ```username``` și ```password``` cu numele respectiv parola dorită.
+Adăugăm un nou utilizator. În exemplul de mai jos puteți inlocui `username` și `password` cu numele respectiv parola dorită.
 
 ```bash
 CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
 ```
 
-Apoi îi acordăm privilegiile necesare 
+Apoi îi acordăm privilegiile necesare
 
 ```bash
 GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' WITH GRANT OPTION;
 ```
 
-În final pentru a îeși din consola mysql tastează comanda ```exit```.
+În final pentru a îeși din consola mysql tastează comanda `exit`.
 
 ## Conectare server mysql
 
@@ -44,19 +44,21 @@ Parola o vom introduce după ce executăm comanda de mai sus. Caracterele nu vor
 
 ## Creare bază de date
 
-Pentru a crea o nouă baza de date executăm comanda ```CREATE DATABASE```
+Pentru a crea o nouă baza de date executăm comanda `CREATE DATABASE`
 
-```mysql
+```text
 CREATE DATABASE database_name;
 ```
 
 Pentru a lista bazele de date disponibile executam următoarea comandă:
 
-```
+```text
 SHOW DATABASES;
 ```
-![002-show-databases](./mysql/002-create-database.png)
+
+![002-show-databases](.gitbook/assets/002-create-database.png)
 
 ## Revenire în consola linux
 
-Pentru a părăsi utilitarul mysql, tastează comanda ```exit``` 
+Pentru a părăsi utilitarul mysql, tastează comanda `exit`
+
