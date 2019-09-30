@@ -19,3 +19,5 @@ Parcurgerea acestui tutorial presupune a avea cunoștințe de bază în a lucra 
 
 Scopul tutorialului este de a fi un ghid în a realiza primii pași în dezvoltarea unei aplicații cu arhitectura de tip frontend - backend. Materialul include referințe pentru a aprofunda tehnologiile utilizate.
 
+## Progressive Web App \(PWA\) cu React și NodeJS backend
+
