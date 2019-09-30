@@ -1,8 +1,6 @@
-# tutorial-frontend
+# Construirea unei interfețe folosind HTML, JQuery, Bootstrap
 
-## Construirea unei interfețe folosind HTML, JQuery, Bootstrap
-
-### Introducere
+## Introducere
 
 În prima parte am construit un server web capabil să servească fișiere statice și să expună date pentru a realiza operațiile de creare, citire, actualizare și ștergere \(CRUD\). În a doua parte vom dezvolta o interfață minimalistă cu scopul de a exemplifica metodele de comunicare între componenta de frontend și componenta de backend.
 
@@ -12,7 +10,7 @@ Dacă pe partea de backend procesul este destul de bine structurat și omogen î
 
 Modul în care ajungi să realizezi o pagină web este într-o măsură diferit de procesul cu care suntem obișnuiți să rezolvăm probleme într-un context de învățare tradițional. De obicei pornim de la o serie de date de intrare pentru care trebuie să obținem un rezultat aplicând o serie de pași. Dacă ai respectat pașii corect atunci rezultatul va fi corect. În acest sens instructiunile din acest tutorial sunt mai degrabă orientative și au rolul de a oferi un punct de plecare. Scopul acestui tutorial este mai degrabă să ofere cîteva elemente de structură, să exemplifice modul de comunicare între client \(frontend\) și server \(backend\) și să demonstreze accesul la date prin HTTP.
 
-### Realizarea unei schițe de design
+## Realizarea unei schițe de design
 
 În dezvoltare web pornești de cele mai multe ori de la o problemă vag definită pe care un utilizator o are, te gandești la o interfață pe care o prototipezi, realizezi o schiță de design. Pornind de la o schiță identifici elementele html necesare și determini pașii prin care să implementezi rezultatul dorit.
 
@@ -20,7 +18,7 @@ Vom reprezenta datele sub forma unui tabel în care fiecare rând reprezintă o 
 
 Pentru a captura datele de la utilizator vom folosi un formular cu elemente de tip text și un buton care să activeze acțiunea de prelucrare a datelor.
 
-### Transformare schiței în cod HTML
+## Transformare schiței în cod HTML
 
 HTML este un limbaj care se învațâ pe parcurs. Fiecare element are o reprezentare standard în browserele web ce poate fi extinsă folosind clase de stil CSS.
 
@@ -96,7 +94,7 @@ Chrome îmi permite să inspectez codul sursă al unui document HTML din secțiu
 
 ![inspect elements](.gitbook/assets/01102-inspect-elements.png)
 
-### Arhitectura aplicației web
+## Arhitectura aplicației web
 
 Înainte de a trece la implementare să ne luăm câteva momente pentru a reflecta la modul în care un utilizator va interacționa cu această pagină web și care este parcursul pe care în vor avea datele în arhitectura aplicației noastre.
 
@@ -149,7 +147,7 @@ Această consolă îmi permite să aplelez orice funcție JavaScript sau să tip
 
 Având aceste elemente de bază în următoarele secțiuni vom implementa partea dinamică a paginii prin care realizăm conexiunea cu datele furnizate de server.
 
-### Citire și afișare date de pe server \(GET\)
+## Citire și afișare date de pe server \(GET\)
 
 Până acum am definit documentele HTML ca fiind o structură de text statică ce va fi afișată de către browser în funcție de modul în care sunt interpretate tag-urile folosite.
 
@@ -207,7 +205,7 @@ Axios expune metoda `get` pentru care se transmite ca parametru adresa resursei 
 
 Fiindcă avem de a face cu o metodă ce va prelucra cererea asincron rezultatul returnat de apel va fi un obiect de tip `Promise`. Pe acest obiect vom transmite două funcții către cele două metode `then()` și `catch()` care vor fi apelate atunci când cererea este îndeplinită cu succes, respectiv dacă a intervenit o eroare. Detaliile privind acest mecanism sunt descrise aici: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
-### Prelucrare date din formular
+## Prelucrare date din formular
 
 Comportamentul standard al unui formular este să transmită datele prin GET către adresa curentă a documentului în care este inclus formularul transmis. Datele vor fi stransmise ca un șir de proprietăți cheie valoare.
 
@@ -270,7 +268,7 @@ axios.post('/messages', {
 
 În cazul în care cererea a fost îndeplinită cu succes vom apela funcția `showMessages` pentru a afișa tabelul cu datele actualizate, altfel vom afișa un mesaj de eroare. Codul va fi adăugat pe ramura `else` din funcția `saveMessage()`.
 
-### Implementare metodă actualizare \(PUT\)
+## Implementare metodă actualizare \(PUT\)
 
 Pentru a implementa mecanismul de editare vom adăuga o nouă funcție `editMessage(id)` care are ca parametru id-ul mesajului de editat. Apoi vom implementa în funcția `saveMessage` cererea de tip PUT.
 
@@ -305,7 +303,7 @@ axios.put('/messages/'+id, {
 })
 ```
 
-### Implementare metodă ștergere \(DELTE\)
+## Implementare metodă ștergere \(DELTE\)
 
 Ștergerea unui mesaj se va realiza implementând o funcție ce primește ca parametru id-ul resursei și realizează o cerere de tip DELETE către endpoint-ul `/messages/:id`
 
