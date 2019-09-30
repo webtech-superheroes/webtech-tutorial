@@ -1,4 +1,4 @@
-# tutorial-frontend
+# Construirea unei interfețe folosind HTML, JQuery, Bootstrap
 
 ## Introducere
 
