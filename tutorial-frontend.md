@@ -2,7 +2,7 @@
 
 ## Construirea unei interfețe folosind HTML, JQuery, Bootstrap
 
-## Introducere
+### Introducere
 
 În prima parte am construit un server web capabil să servească fișiere statice și să expună date pentru a realiza operațiile de creare, citire, actualizare și ștergere \(CRUD\). În a doua parte vom dezvolta o interfață minimalistă cu scopul de a exemplifica metodele de comunicare între componenta de frontend și componenta de backend.
 
