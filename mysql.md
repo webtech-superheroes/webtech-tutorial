@@ -46,7 +46,7 @@ Parola o vom introduce după ce executăm comanda de mai sus. Caracterele nu vor
 
 Din consola MySQL voi rula comenzi SQL. Sfârșitul unei comenzi este marcat de **caracterul ;**
 
-Pentru a crea o nouă baza de date executăm comanda `CREATE DATABASE`
+De exemplu, pentru a crea o nouă baza de date executăm comanda `CREATE DATABASE`
 
 ```text
 CREATE DATABASE database_name;
