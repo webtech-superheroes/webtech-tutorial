@@ -86,29 +86,15 @@ Pentru a rula programul deschid fisierul `server.js` și apăs butonul RUN
 
 ## 3. Cum instalez MySQL și cum creez baza de date?
 
-Cloud9 pune la dispoziție un utilitar pentru configurarea unui serviciu de MySQL denumit _**mysql-ctl**_
+Detaliile pentru a configura MySQL în Cloud9 sunt dispoibile [aici](mysql.md).
 
-Pentru a instala și porni serverul de baze de date rulez comanda:
 
-```bash
-mysql-ctl start
-```
-
-Conectarea la serverul de baza de date se realizează executând urmatoarea comandă. Parametrul urmat dupa -u indică numele utilizatorului cu care mă conectez. În cazul de față este `root` fără parola.
-
-```bash
-mysql -u root
-```
-
-Din consola MySQL voi rula comenzi SQL. Sfârșitul unei comenzi este marcat de **caracterul ;**
-
-De exemplu pentru a crea baza de date cu numele **profile** voi executa
+În continuare adaugă baza de date cu numele **profile** executand comanda:
 
 ```sql
 create database profile;
 ```
 
-Notă: Utilitarul `mysql-ctl` este specific mediului Cloud9. Mai multe detalii despre instalarea și configurarea MySQL pe un alt sistem de operare în documentația oficială \([https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)\)
 
 * [ ] TODO: verifică dacă baza de date a fost creată cu succes executând `show databases;`
 * [ ] TODO: părăsește consola mysql executând comanda `exit`
