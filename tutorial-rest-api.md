@@ -67,7 +67,7 @@ const app = express()
 Pentru a servi fișiere statice precum imagini, documente html, css sau javascript folosește `express.static`
 
 ```javascript
-app.use('/', express.static('public'))
+app.use('/', express.static('frontend'))
 ```
 
 Primul parametru reprezintă calea din adresa url. Al doilea parametru este un apel al metodei `static` care primește calea către directorul în care sunt stocate fișierele statice.
@@ -80,7 +80,7 @@ app.listen(8080)
 
 Pentru a rula programul deschid fisierul `server.js` și apăs butonul RUN
 
-* [ ] TODO: crează un director denumit `public`
+* [ ] TODO: crează un director denumit `frontend`
 * [ ] TODO: adaugă în directorul creat un fișier `index.html`
 * [ ] TODO: deschide în browser aplicația accesând adresa URL \([http://localhost:8080](http://localhost:8080)\)
 

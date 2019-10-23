@@ -96,6 +96,6 @@ app.delete('/messages/:id', (request, response) => {
     })
 })
 
-app.use('/', express.static('public'))
+app.use('/', express.static('frontend'))
 
 app.listen(8080)
