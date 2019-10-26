@@ -8,7 +8,9 @@
 * [Lucru cu git](git.md)
 
 ## Tutorial frontend-backend
-* [Construirea unei interfețe folosind HTML, JQuery, Bootstrap](tutorial-frontend.md)
-* [Construirea unui API RESTful](tutorial-rest-api.md)
+
+* [Arhitectura aplicației](tutorial-arhitectura.md)
+* [Construirea API-ului RESTful](tutorial-rest-api.md)
+* [Construirea interfeței folosind HTML, JQuery, Bootstrap](tutorial-frontend.md)
 
 

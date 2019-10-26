@@ -8,12 +8,13 @@
 
 ## Dezvoltarea unei aplicații web cu arhitectură fontend - backend
 
-Tutorialul este organizat în două părți:
+Tutorialul este organizat în trei părți:
 
-1. [Construirea unui API RESTful folosind ExpressJS](tutorial-rest-api.md)
-2. [Construirea unei interfețe folosind HTML, Axios, JQuery](tutorial-frontend.md)
+1. [Arhitectura aplicației](tutorial-arhitectura.md)
+2. [Construirea API-ului RESTful folosind ExpressJS](tutorial-rest-api.md)
+3. [Construirea interfeței folosind HTML, Axios, JQuery](tutorial-frontend.md)
 
-Codul sursă rezultat este disponiblil în directorul code.
+Codul sursă rezultat este disponiblil pe github în directorul [code](https://github.com/webtech-superheroes/webtech-tutorial).
 
 Parcurgerea acestui tutorial presupune a avea cunoștințe de bază în a lucra cu o consolă Linux, înțelegerea conceptului de baze de date relațională, bazele programării, întelegerea protocolului HTTP și elemente de sintaxă JavaScript precum definirea de variabile, tipuri de date și structuri de date \(JSON\).
 
