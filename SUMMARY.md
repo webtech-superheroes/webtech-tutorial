@@ -1,11 +1,14 @@
 # Table of contents
 
-* [README](README.md)
-* [Deployment](deployment.md)
-* [Configurarea serviciului mysql](mysql.md)
-* [Construirea unei interfețe folosind HTML, JQuery, Bootstrap](tutorial-frontend.md)
+* [Home](README.md)
+
+## Configurare mediu de lucru
 * [Cloud9 în AWS](c9.md)
-* [Cont GitHub sau alternative](git.md)
-* [Links](localsetup.md)
+* [Configurarea serviciului mysql](mysql.md)
+* [Lucru cu git](git.md)
+
+## Tutorial frontend-backend
+* [Construirea unei interfețe folosind HTML, JQuery, Bootstrap](tutorial-frontend.md)
 * [Construirea unui API RESTful](tutorial-rest-api.md)
+
 
