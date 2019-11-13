@@ -82,7 +82,7 @@ Pentru a rula programul deschid fisierul `server.js` și apăs butonul RUN
 
 * [ ] TODO: crează un director denumit `frontend`
 * [ ] TODO: adaugă în directorul creat un fișier `index.html`
-* [ ] TODO: deschide în browser aplicația accesând adresa URL \([http://localhost:8080](http://localhost:8080)\)
+* [ ] TODO: deschide în browser aplicația accesând adresa URL \([http://ip:8080](http://ip:8080)\)
 
 ## 3. Cum instalez MySQL și cum creez baza de date?
 
@@ -245,7 +245,7 @@ GET /messages
 GET /messages/1
 ```
 
-Pentru interogarea tabelului modelul sequelize expune metode precum `findAll`, `findById`, `findOne`. Functia va returna un obiect de tip `Promise` ce va fi executat imediat ce datele sunt primite de la serverul de baze de date. Mai multe detalii despre interogari aici: [http://docs.sequelizejs.com/manual/tutorial/querying.html](http://docs.sequelizejs.com/manual/tutorial/querying.html)
+Pentru interogarea tabelului modelul sequelize expune metode precum `findAll`, `findByPk`, `findOne`. Functia va returna un obiect de tip `Promise` ce va fi executat imediat ce datele sunt primite de la serverul de baze de date. Mai multe detalii despre interogari aici: [http://docs.sequelizejs.com/manual/tutorial/querying.html](http://docs.sequelizejs.com/manual/tutorial/querying.html)
 
 ```javascript
 app.get('/messages', (request, response) => {
@@ -255,7 +255,7 @@ app.get('/messages', (request, response) => {
 })
 
 app.get('/messages/:id', (request, response) => {
-    Messages.findById(request.params.id).then((result) => {
+    Messages.findByPk(request.params.id).then((result) => {
         if(result) {
             response.status(200).json(result)
         } else {
@@ -284,7 +284,7 @@ Dacă resursa a fost găsită o actualizez apelând metoda `update()` cu obiectu
 
 ```javascript
 app.put('/messages/:id', (request, response) => {
-    Messages.findById(request.params.id).then((message) => {
+    Messages.findByPk(request.params.id).then((message) => {
         if(message) {
             message.update(request.body).then((result) => {
                 response.status(201).json(result)
@@ -318,7 +318,7 @@ Dacă resursa este găsită după ID, apelez metoda `destroy`,iar sequelize va t
 
 ```javascript
 app.delete('/messages/:id', (request, response) => {
-    Messages.findById(request.params.id).then((message) => {
+    Messages.findByPk(request.params.id).then((message) => {
         if(message) {
             message.destroy().then((result) => {
                 response.status(204).send()
