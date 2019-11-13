@@ -1,7 +1,7 @@
 const express = require('express')
 const Sequelize = require('sequelize')
 
-const sequelize = new Sequelize('profile', 'root', '', {
+const sequelize = new Sequelize('profile', 'root', 'pass', {
     dialect: "mysql",
     host: "localhost"
 })
@@ -48,7 +48,7 @@ app.get('/messages', (request, response) => {
 })
 
 app.get('/messages/:id', (request, response) => {
-    Messages.findById(request.params.id).then((result) => {
+    Messages.findByPk(request.params.id).then((result) => {
         if(result) {
             response.status(200).json(result)
         } else {
@@ -61,7 +61,7 @@ app.get('/messages/:id', (request, response) => {
 })
 
 app.put('/messages/:id', (request, response) => {
-    Messages.findById(request.params.id).then((message) => {
+    Messages.findByPk(request.params.id).then((message) => {
         if(message) {
             message.update(request.body).then((result) => {
                 response.status(201).json(result)
@@ -79,7 +79,7 @@ app.put('/messages/:id', (request, response) => {
 })
 
 app.delete('/messages/:id', (request, response) => {
-    Messages.findById(request.params.id).then((message) => {
+    Messages.findByPk(request.params.id).then((message) => {
         if(message) {
             message.destroy().then((result) => {
                 response.status(204).send()
