@@ -4,7 +4,7 @@ Aplicația pe care o implementăm pentru a demostra modelul Single Page Applicat
 
 ![application interface](./docs/01101-html.png)
 
-Utilizatorul are posibilitatea să realizeze operațiile CRUD (create, read, update, delete) pe un datele stocate în baza de date.
+Utilizatorul are posibilitatea să realizeze operațiile CRUD (create, read, update, delete) pe datele stocate în baza de date.
 
 Înainte de a trece la implementare să ne luăm câteva momente pentru a reflecta la modul în care un utilizator va interacționa cu această pagină web și care este parcursul pe care în vor avea datele în arhitectura aplicației noastre.
 
