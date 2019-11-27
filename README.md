@@ -22,3 +22,40 @@ Scopul tutorialului este de a fi un ghid în a realiza primii pași în dezvolta
 
 ## Progressive Web App \(PWA\) cu React și NodeJS backend
 
+Codul pentru aplicația exemplificată este disponibil aici: https://github.com/webtech-superheroes/webtech-hub
+
+## Operații pe date și persistență
+
+***ORM (Object-relational mapping)***
+
+- permite transpunerea bazei de date in cod prin realizarea de modele asociate fiecarui tabel
+- sunt definite relatiile intre tabele
+- ideal pentru realizarea de operatii simple pe date (CRUD)
+- operatiile sunt realizate asincron
+
+Implementările cele mai populare sunt:
+* ActiveRecord Pattern - https://www.martinfowler.com/eaaCatalog/activeRecord.html
+* DataMapper Pattern - https://martinfowler.com/eaaCatalog/dataMapper.html
+
+***ETL (extract, transform, load)***
+
+Din fisiere
+
+* csv - https://www.npmjs.com/package/csvtojson
+
+* json - folosind JSON.parse() - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+
+* xml
+* xlsx - https://www.npmjs.com/package/xlsx
+
+Din baze de date
+
+* relationale (SQL)
+* nerelationale (noSQL)
+* grafuri
+
+Din servicii web
+* API-uri REST
+* API-uri SOAP
+
+
