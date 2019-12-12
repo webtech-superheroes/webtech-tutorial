@@ -31,4 +31,4 @@ Codul pentru aplicația exemplificată este disponibil aici: https://github.com/
 1. [ORM (Object-relational mapping) cu Sequelize](orm.md)
 2. [ETL (extract, transform, load)](etl.md)
 
-Codul sursă este disponibil în directorul [etl](https://github.com/webtech-superheroes/etl)
+Codul sursă este disponibil în directorul [etl](https://github.com/webtech-superheroes/webtech-tutorial/etl)
