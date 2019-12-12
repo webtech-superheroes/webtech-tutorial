@@ -15,7 +15,7 @@
 
 ## Operații pe date și persistență
 
-* [Implementare funcții ETL](etl-functional.md)
-* [Implementare clasa ETL](etl-class.md)
+* [ORM (Object-relational mapping) cu Sequelize](orm.md)
+* [ETL (extract, transform, load)](etl.md)
 
 
