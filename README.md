@@ -1,18 +1,18 @@
-# README
+# Home
 
 ## Configurarea mediului de lucru
 
-1. [Cloud9 în AWS](c9.md)
-2. [Configurare MySQL](mysql.md)
-3. [Lucru cu git](git.md)
+1. [Cloud9 în AWS](configurare-mediu-de-lucru/c9.md)
+2. [Configurare MySQL](configurare-mediu-de-lucru/mysql.md)
+3. [Lucru cu git](configurare-mediu-de-lucru/git.md)
 
 ## Dezvoltarea unei aplicații web cu arhitectură fontend - backend
 
 Tutorialul este organizat în trei părți:
 
-1. [Arhitectura aplicației](tutorial-arhitectura.md)
-2. [Construirea API-ului RESTful folosind ExpressJS](tutorial-rest-api.md)
-3. [Construirea interfeței folosind HTML, Axios, JQuery](tutorial-frontend.md)
+1. [Arhitectura aplicației](tutorial-frontend-backend/tutorial-arhitectura.md)
+2. [Construirea API-ului RESTful folosind ExpressJS](tutorial-frontend-backend/tutorial-rest-api.md)
+3. [Construirea interfeței folosind HTML, Axios, JQuery](tutorial-frontend-backend/tutorial-frontend.md)
 
 Codul sursă rezultat este disponiblil pe github în directorul [simple-spa](https://github.com/webtech-superheroes/simple-spa).
 
@@ -22,13 +22,14 @@ Scopul tutorialului este de a fi un ghid în a realiza primii pași în dezvolta
 
 ## Progressive Web App \(PWA\) cu React și NodeJS backend
 
-Codul pentru aplicația exemplificată este disponibil aici: https://github.com/webtech-superheroes/webtech-hub
+Codul pentru aplicația exemplificată este disponibil aici: [https://github.com/webtech-superheroes/webtech-hub](https://github.com/webtech-superheroes/webtech-hub)
 
 ## Operații pe date și persistență
 
 În acest tutorial sunt exemplificate operațiile pe date și persistența într-o bază de date relațională
 
-1. [ORM (Object-relational mapping) cu Sequelize](orm.md)
-2. [ETL (extract, transform, load)](etl.md)
+1. [ORM \(Object-relational mapping\) cu Sequelize](operatii-pe-date-si-persistenta/orm.md)
+2. [ETL \(extract, transform, load\)](operatii-pe-date-si-persistenta/etl.md)
 
 Codul sursă este disponibil în directorul [etl](https://github.com/webtech-superheroes/webtech-tutorial/etl)
+
