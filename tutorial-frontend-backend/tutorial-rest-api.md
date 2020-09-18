@@ -4,15 +4,6 @@ Un API RESTful reprezintă o metodă de a expune date și de a realiza operații
 
 În acest exercițiu construim un server web cu ajutorul NodeJS și al framework-ului ExpressJS. Datele sunt stocate într-o bază de date relațională MySQL. Accesul la date se face prin Sequelize.
 
-![npm init](../.gitbook/assets/00001-arhitectura.jpg)
-
-## Ce vei avea nevoie?
-
-* Un mediul de lucru integrat \(IDE\) sau un editor text
-* NodeJS versiunea &gt;= 8.9
-* O instanță de MySQL
-* Postman
-
 ## 1. Cum inițializez o aplicație NodeJS?
 
 Pentru a inițializa o aplicație NodeJS execut următoarea comandă din terminal si completez detaliile pentru proiect
@@ -21,7 +12,7 @@ Pentru a inițializa o aplicație NodeJS execut următoarea comandă din termina
 npm init
 ```
 
-Urmăresc instrucțiunile de pe ecran și completez următoarele detalii:
+Urmărește instrucțiunile de pe ecran și completez următoarele detalii:
 
 * Name - numele proiectului
 * Version - versiunea proiectului \(default\) - trec peste apasand ENTER
@@ -33,7 +24,7 @@ Urmăresc instrucțiunile de pe ecran și completez următoarele detalii:
 * Author - trec peste apasand ENTER
 * License - trec peste apasand ENTER
 
-Pe ecran va aparea un mesaj de confirmare:
+După ce ai completat toate informațiile pe ecran va aparea un mesaj de confirmare:
 
 ![npm init](../.gitbook/assets/00101-npm-init.png)
 

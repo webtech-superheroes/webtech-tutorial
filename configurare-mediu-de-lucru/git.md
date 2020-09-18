@@ -1,14 +1,25 @@
 # Lucru cu git
 
-Git este un sistem de versionare a codului extrem de util pentru lucru în echipă.
+Git este un sistem de versionare a codului extrem de util pentru lucru în echipă. Îl poți folosi local pentru a versiona fișiere text sau prin unul dintre multitudinea de platforme online precum GitHub, GitLab, BitBucket, etc.
 
-Îl poți folosi local pentru a versiona fișiere text. Sau îți poți crea un repository pe [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/product/) în care să publici codul sursă.
+Pentru a desfășura activitatea de la seminar vei avea nevoie de un cont pe GitHub \([https://github.com/join](https://github.com/join)\).
+
+În imaginea de mai jos am extras comenzile pe care le folosim cel mai des:
 
 ![working with git](../.gitbook/assets/001-working-with-git.jpg)
 
-## Utile
+```bash
+git init
+git clone [url]
+git status
+git add [file]
+git commit -m "a descriptive commit message"
+git push [alias] [branch]
+git pull
+```
+
+## Resurse
 
 * [pdf cheat sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
-* [ghid comenzi](https://rogerdudler.github.io/git-guide/)
-* [tig](https://jonas.github.io/tig/) - interfață în consolă pentru git 
+* [ghid instalare și comenzi de bază](https://rogerdudler.github.io/git-guide/)
 

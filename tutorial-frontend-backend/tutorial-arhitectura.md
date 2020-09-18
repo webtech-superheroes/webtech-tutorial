@@ -1,10 +1,6 @@
 # Arhitectura aplicației
 
-Aplicația pe care o implementăm pentru a demostra modelul Single Page Application este una simplă ce permite gestionarea de mesaje pe o pagină personală.
-
-![application interface](../.gitbook/assets/01101-html%20%281%29.png)
-
-Utilizatorul are posibilitatea să realizeze operațiile CRUD \(create, read, update, delete\) pe datele stocate în baza de date.
+Aplicația pe care o implementăm pentru a demostra modelul Single Page Application 
 
 Înainte de a trece la implementare să ne luăm câteva momente pentru a reflecta la modul în care un utilizator va interacționa cu această pagină web și care este parcursul pe care în vor avea datele în arhitectura aplicației noastre.
 
@@ -19,4 +15,10 @@ Serverul web va prelucra această cerere și va returna continutul text în cazu
 În acest context vom avea un flux asincron de date între pagina web client și server pentru fiecare eveniment declanșat de o acțiune pe care utilizatorul o va realiza în pagină.
 
 ![single page application](../.gitbook/assets/01104-spa-architecture.png)
+
+Să ne imaginăm că aplicația noastră va permite gestionarea de mesaje pe o pagină personală.
+
+![application interface](../.gitbook/assets/01101-html%20%281%29.png)
+
+Utilizatorul are posibilitatea să realizeze operațiile CRUD \(create, read, update, delete\) pe datele stocate în baza de date.
 

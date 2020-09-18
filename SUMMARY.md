@@ -6,7 +6,7 @@
 
 * [Local](configurare-mediu-de-lucru/local.md)
 * [Cloud9 în AWS](configurare-mediu-de-lucru/c9.md)
-* [Configurarea serviciului mysql](configurare-mediu-de-lucru/mysql.md)
+* [Configurarea serviciului mysql în Cloud9](configurare-mediu-de-lucru/mysql.md)
 * [Lucru cu git](configurare-mediu-de-lucru/git.md)
 
 ## Tutorial frontend-backend
