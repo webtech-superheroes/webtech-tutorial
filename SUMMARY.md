@@ -13,7 +13,7 @@
 
 * [Arhitectura aplicației](tutorial-frontend-backend/tutorial-arhitectura.md)
 * [Construirea API-ului RESTful](tutorial-frontend-backend/tutorial-rest-api.md)
-* [Construirea interfeței folosind HTML, JQuery, Bootstrap](tutorial-frontend-backend/tutorial-frontend.md)
+* [Construirea interfeței folosind HTML și JavaScript](tutorial-frontend-backend/tutorial-frontend.md)
 
 ## Operații pe date și persistență
 

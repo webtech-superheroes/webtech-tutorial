@@ -1,4 +1,4 @@
-# Construirea interfeței folosind HTML, JQuery, Bootstrap
+# Construirea interfeței folosind HTML și JavaScript
 
 ## Introducere
 
@@ -8,8 +8,6 @@
 
 Dacă pe partea de backend procesul este destul de bine structurat și omogen în diferite limbaje de programare, dezvoltarea de frontend conține elemente subiective care țin de estetică, stil, aspect.
 
-Modul în care ajungi să realizezi o pagină web este într-o măsură diferit de procesul cu care suntem obișnuiți să rezolvăm probleme într-un context de învățare tradițional. De obicei pornim de la o serie de date de intrare pentru care trebuie să obținem un rezultat aplicând o serie de pași. Dacă ai respectat pașii corect atunci rezultatul va fi corect. În acest sens instructiunile din acest tutorial sunt mai degrabă orientative și au rolul de a oferi un punct de plecare. Scopul acestui tutorial este mai degrabă să ofere cîteva elemente de structură, să exemplifice modul de comunicare între client \(frontend\) și server \(backend\) și să demonstreze accesul la date prin HTTP.
-
 ## Realizarea unei schițe de design
 
 În dezvoltare web pornești de cele mai multe ori de la o problemă vag definită pe care un utilizator o are, te gandești la o interfață pe care o prototipezi, realizezi o schiță de design. Pornind de la o schiță identifici elementele html necesare și determini pașii prin care să implementezi rezultatul dorit.
@@ -17,6 +15,10 @@ Modul în care ajungi să realizezi o pagină web este într-o măsură diferit 
 Vom reprezenta datele sub forma unui tabel în care fiecare rând reprezintă o înregistrare din baza de date. Tabelul va avea o secțiune de antet care va fi statică și o secțiune dinamică pe care o vom construi în funcție de datele primite de pe server. Fiecare înregistrare va permite acțiunile de editare și stergere pe care le vom reprezenta prin două elemente de tip buton.
 
 Pentru a captura datele de la utilizator vom folosi un formular cu elemente de tip text și un buton care să activeze acțiunea de prelucrare a datelor.
+
+În final dacă deschid documentul HTML în Chrome rezultatul va arăta astfel.
+
+![html output](../.gitbook/assets/01101-html.png)
 
 ## Transformare schiței în cod HTML
 
@@ -41,25 +43,27 @@ Elementele HTML necesare realizării unui tabel - [https://www.w3schools.com/htm
 Codul pentru a reprezenta un tabel va arăta astfel:
 
 ```markup
-<table style="width:100%;">
-    <tr>
-        <th>ID</th>
-        <th>Subject</th>
-        <th>Name</th> 
-        <th>Message</th>
-        <th>Actions</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>Subject data</td>
-        <td>Name data</td>
-        <td>Message data</td>
-        <td>
-            <button>Edit</button>
-            <button>Delete</button>
-        </td>
-    </tr>
-</table>
+<div id="table">
+    <table style="width:100%;">
+        <tr>
+            <th>ID</th>
+            <th>Subject</th>
+            <th>Name</th> 
+            <th>Message</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Subject data</td>
+            <td>Name data</td>
+            <td>Message data</td>
+            <td>
+                <button>Edit</button>
+                <button>Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
 ```
 
 Elementele HTML necesare realizării unui formular - [https://www.w3schools.com/html/html\_forms.asp](https://www.w3schools.com/html/html_forms.asp)
@@ -78,21 +82,11 @@ Iar codul pentru a reprezenta un formular va fi acesta:
   <input type="submit" value="Save message">
   <input type="reset" value="Cancel">
 </form>
+
+    
 ```
 
-De asemenea vom adăuga un element `div` identificat cu id-ul `table` în care vom genera dinamic tabelul de mai sus folosind datele extrase din API.
-
-```markup
-<div id="table"></div>
-```
-
-În final dacă deschid documentul HTML în Chrome rezultatul va arăta astfel.
-
-![html output](../.gitbook/assets/01101-html.png)
-
-Chrome îmi permite să inspectez codul sursă al unui document HTML din secțiunea Elements a consolei pentru dezvoltatori. Pentru a accesa această secțiune voi realiza combinația de taste `Ctrl + Shift + I`
-
-![inspect elements](../.gitbook/assets/01102-inspect-elements.png)
+Ce am obținut din acest exercițiu este un document static, dar ne dorim să îl populăm cu date de pe server și să implementăm fiecare acțiune folosind JavaScript.
 
 ## Afișare date la încărcare
 
