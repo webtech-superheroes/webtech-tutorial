@@ -1,7 +1,5 @@
 # Construirea interfeței folosind HTML și JavaScript
 
-## Introducere
-
 În prima parte am construit un server web capabil să servească fișiere statice și să expună date pentru a realiza operațiile de creare, citire, actualizare și ștergere \(CRUD\). În a doua parte vom dezvolta o interfață minimalistă cu scopul de a exemplifica metodele de comunicare între componenta de frontend și componenta de backend.
 
 În general dezvoltarea de frontend este un proces iterativ ce presupune realizarea de schițe de design întermediare, care sunt validate cu utilizatorii, transformarea acestora în cod HTML și CSS, implementarea de cod care gestionează interacțiunea cu utilizatorul, testare și lansare în producție.
@@ -92,24 +90,11 @@ Ce am obținut din acest exercițiu este un document static, dar ne dorim să î
 
 Evenimentul declanșat atunci când pagina este încărcată `onload` va determina o cerere de tip GET care va furniza lista de mesaje pe care o vom afișa în tabel.
 
-Apăsarea butonului de ștergere pentru o înregistrare va determina o cerere de tip DELETE. Completarea formularului și apăsarea butonului salvează va determina o cerere de tip POST dacă este vorba de adăugarea unei înregistrări noi sau o cerere de tip PUT dacă este vorba de editarea unei înregistrări existente.
+Apăsarea butonului de ștergere pentru o înregistrare va determina o cerere de tip DELETE. 
 
-Pentru a realiza comunicarea asincronă vom folosi biblioteca [axios](https://github.com/axios/axios) pe care o vom include în pagină inserând următorul cod înainte de tagul `</body>` ce închide secțiunea de conținut HTML:
+Completarea formularului și apăsarea butonului salvează va determina o cerere de tip POST dacă este vorba de adăugarea unei înregistrări noi.
 
-```markup
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-```
-
-Pentru a realiza operații pe elementele HTML din pagină vom folosi biblioteca [JQuery](https://jquery.com/) pe care o includem de asemenea în documentul HTML.
-
-```markup
-<script 
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-```
-
-Pentru a testa că JQuery a fost inclus cu succes vom adăuga următorul snippet de code ce tipărește în consolă mesajul `Hello form JQuery`.
+Editarea se va face preluând datele cu GET și în final cu cerere de tip PUT către backend.
 
 ```markup
 <script type="text/javascript">
@@ -118,14 +103,6 @@ Pentru a testa că JQuery a fost inclus cu succes vom adăuga următorul snippet
     })
 </script>
 ```
-
-Observăm că pentru evenimentul `ready` care este declanșat atunci când toate resursele din pagina html s-au încărcat este definită o funcție ce aplează metoda log pe obiectul console. Parametrul primit de metoda log este un string ce va fi tipăit în consola JavaScript a browserului web pe care o pot accesa în Chrome folosind combinația de taste `Ctrl + Shift + I`.
-
-![javascript console](../.gitbook/assets/01105-chrome-console.png)
-
-Această consolă îmi permite să aplelez orice funcție JavaScript sau să tipăresc conținutul unei variabile pe care vreau să inspectez atunci cand dezvolt o aplicație.
-
-Având aceste elemente de bază în următoarele secțiuni vom implementa partea dinamică a paginii prin care realizăm conexiunea cu datele furnizate de server.
 
 ## Citire și afișare date de pe server \(GET\)
 
