@@ -2,9 +2,10 @@
 
 ## Configurarea mediului de lucru
 
-1. [Cloud9 în AWS](configurare-mediu-de-lucru/c9.md)
-2. [Configurare MySQL](configurare-mediu-de-lucru/mysql.md)
-3. [Lucru cu git](configurare-mediu-de-lucru/git.md)
+1. [Local](configurare-mediu-de-lucru/local.md)
+2. [Cloud9 în AWS](configurare-mediu-de-lucru/c9.md)
+3. [Configurare MySQL](configurare-mediu-de-lucru/mysql.md)
+4. [Lucru cu git](configurare-mediu-de-lucru/git.md)
 
 ## Dezvoltarea unei aplicații web cu arhitectură fontend - backend
 
