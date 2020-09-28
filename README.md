@@ -15,8 +15,6 @@ Tutorialul este organizat în trei părți:
 2. [Construirea API-ului RESTful folosind ExpressJS](tutorial-frontend-backend/tutorial-rest-api.md)
 3. [Construirea interfeței folosind HTML, Axios, JQuery](tutorial-frontend-backend/tutorial-frontend.md)
 
-Codul sursă rezultat este disponiblil pe github în directorul [simple-spa](https://github.com/webtech-superheroes/simple-spa).
-
 Parcurgerea acestui tutorial presupune a avea cunoștințe de bază în a lucra cu o consolă Linux, înțelegerea conceptului de baze de date relațională, bazele programării, întelegerea protocolului HTTP și elemente de sintaxă JavaScript precum definirea de variabile, tipuri de date și structuri de date \(JSON\).
 
 Scopul tutorialului este de a fi un ghid în a realiza primii pași în dezvoltarea unei aplicații cu arhitectura de tip frontend - backend. Materialul include referințe pentru a aprofunda tehnologiile utilizate.
