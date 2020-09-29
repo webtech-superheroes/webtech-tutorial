@@ -13,7 +13,7 @@ Tutorialul este organizat în trei părți:
 
 1. [Arhitectura aplicației](tutorial-frontend-backend/tutorial-arhitectura.md)
 2. [Construirea API-ului RESTful folosind ExpressJS](tutorial-frontend-backend/tutorial-rest-api.md)
-3. [Construirea interfeței folosind HTML, Axios, JQuery](tutorial-frontend-backend/tutorial-frontend.md)
+3. [Construirea interfeței folosind HTML și JavaScript](tutorial-frontend-backend/tutorial-frontend.md) 
 
 Parcurgerea acestui tutorial presupune a avea cunoștințe de bază în a lucra cu o consolă Linux, înțelegerea conceptului de baze de date relațională, bazele programării, întelegerea protocolului HTTP și elemente de sintaxă JavaScript precum definirea de variabile, tipuri de date și structuri de date \(JSON\).
 
