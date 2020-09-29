@@ -7,7 +7,7 @@
 3. [Configurare MySQL](configurare-mediu-de-lucru/mysql.md)
 4. [Lucru cu git](configurare-mediu-de-lucru/git.md)
 
-## Dezvoltarea unei aplicații web cu arhitectură fontend - backend
+## Dezvoltarea unei aplicații web cu arhitectură frontend - backend
 
 Tutorialul este organizat în trei părți:
 
