@@ -15,6 +15,11 @@
 * [Construirea API-ului RESTful](tutorial-frontend-backend/tutorial-rest-api.md)
 * [Construirea interfeței folosind HTML și JavaScript](tutorial-frontend-backend/tutorial-frontend.md)
 
+## PROGRESSIVE WEB APPS \(PWA\)
+
+* [WebTech Hub app](progressive-web-apps-pwa/webtech-hub-app.md)
+* [Resurse](progressive-web-apps-pwa/resurse.md)
+
 ## Operații pe date și persistență
 
 * [ORM \(Object-relational mapping\) cu Sequelize](operatii-pe-date-si-persistenta/orm.md)
