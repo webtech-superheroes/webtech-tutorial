@@ -10,3 +10,5 @@ Pentru a lucra pe calculatorul propriu vei avea nevoie de următoarele programe 
 
 Este suficient să treci prin procesul de instalare cu opțiunile default selectate.
 
+INFO: Cum se adaugă utilitarul mysql in variabila PATH - [https://dev.mysql.com/doc/mysql-windows-excerpt/5.7/en/mysql-installation-windows-path.html](https://dev.mysql.com/doc/mysql-windows-excerpt/5.7/en/mysql-installation-windows-path.html)
+
