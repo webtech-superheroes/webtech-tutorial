@@ -41,7 +41,7 @@ Elementele HTML necesare realizării unui tabel - [https://www.w3schools.com/htm
 Codul pentru a reprezenta un tabel va arăta astfel:
 
 ```markup
-<div id="table">
+<div id="content">
     <table style="width:100%;">
         <tr>
             <th>ID</th>
@@ -111,9 +111,11 @@ Până acum am definit documentele HTML ca fiind o structură de text statică c
 În acest pas vom folosi axios pentru a prelua date de server in format JSON, apoi parcurgând acele date vom construi dinamic codul HTML pentru a afșa tabelul. În final îl vom insera în pagină în div-ul a cărui id definit este `table` folosind funcția html din JQuery.
 
 ```javascript
-function showMessages() {
-    fetch('/messages').then(response => response.json()).then(function(results) {
-
+async function showMessages() {
+    try {
+        let results = await fetch('/messages').then(response => response.json())
+    
+    
         let html = ` <table style="width:500px;">
                 <tr>
                     <th>ID</th>
@@ -122,7 +124,7 @@ function showMessages() {
                     <th>Message</th>
                     <th>Actions</th>
                 </tr>`
-
+    
         results.data.forEach(function(element) {
             html += `<tr>
                         <td>${element.id}</td>
@@ -135,7 +137,7 @@ function showMessages() {
                         </td>
                     </tr>`
         })
-
+    
         html += `</table>`
         document.getElementById('#table').innerHTML = html
     }).catch(function(error) {
@@ -179,84 +181,49 @@ Pentru a suprascrie acest comportament și a implementa un mecanism asincron de 
 
 Apoi vom avea nevoie de un mecanism prin care să accesăm valorile din câmpurile definite în formular. Fiind în contextul unui eveniment lansat pe metoda onsubmit am posibilitatea de a accesa aceste valori prin `event.target`.
 
-Dar pentru a prezenta un mecanism general de preluare valori pentru un element input vom folosi metoda `val()` din JQuery. Aceasta presupune să definesc un selector pentru elementul respectiv. În cazul nostru vom defini unul după id-ul unic asignat fiecărui element din formular și să apelez metoda val\(\). Un exemplu pentru o astfel de sintaxă este: `$('#subject').val()` care va căuta elementul cu id-ul subject și va returna valoarea tastată în acel câmp text.
+Următorul pas ar fi să determin dacă este vorba de o operație de editare a unei înregistrări existente sau de adăugare a unei înregistrari noi. 
 
-Având acest mecanism de a accesa valorile din formular voi defini câte o variabilă pentru fiecare element.
-
-Următorul pas ar fi să determin dacă este vorba de o operație de editare a unuei înregistrări existente sau de adăugare a unei înregistrari noi. În primul caz vom transmite datele către server prin metoda PUT către endpoint-ul `/messages/:id` cu valoarea id preluată din formular, iar în ar doilea caz vom transmite datele către server prin metoda POST către endpoint-ul `/messages`.
+În primul caz vom transmite datele către server prin metoda PUT către endpoint-ul `/messages/:id` cu valoarea id preluată din formular. In al doilea caz vom transmite datele către server prin metoda POST către endpoint-ul `/messages`.
 
 ```javascript
-function saveMessage(event) {
+async function saveMessage(event) {
     event.preventDefault()
 
-    let id = $('#id').val()
-    let name = $('#name').val()
-    let subject = $('#subject').val()
-    let message = $('#message').val() 
-
+    let id = event.target.id
+    
+    let data = {
+        name: event.target.name,
+        subject: event.target.subject,
+        message: event.target.message
+    }
+    
+    let url = ''
+    let method = ''
+    
     if(id) {
         //make a request to PUT /messages/:id
+        url = '/messages/' + id
+        method = 'PUT'
     } else {
-        //make a request to POST /messages
+        url = '/messages'
+        method = 'POST'
     }
-
+    
+    try {
+        let result = await fetch(url, {
+            method: method, 
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+         }).then(response => response.json())
+         
+         showMessages()
+     } catch(err) {
+         alert('unable to save message')
+     }
+     
 }
-```
-
-Implementarea efectivă a fiecărei metode va fi făcută în sectiunea următoare.
-
-### Transmitere și salvare date \(POST\)
-
-O convenție a standardului REST este de a folosi POST pentru a crea o resursă nouă. Cu axios o astfel de cerere se execută folosind funcția `post()`. Primul parametru este adresa resursei, iar al doilea este un obiect ce descrie datele transmise către server.
-
-```javascript
-axios.post('/messages', {
-    name: name,
-    subject: subject,
-    message: message
-}).then(function(result) {
-    showMessages()
-    $(event.target).trigger("reset")
-}).catch(function(err) {
-    alert('Resource could not be saved')
-})
-```
-
-În cazul în care cererea a fost îndeplinită cu succes vom apela funcția `showMessages` pentru a afișa tabelul cu datele actualizate, altfel vom afișa un mesaj de eroare. Codul va fi adăugat pe ramura `else` din funcția `saveMessage()`.
-
-## Implementare metodă actualizare \(PUT\)
-
-Pentru a implementa mecanismul de editare vom adăuga o nouă funcție `editMessage(id)` care are ca parametru id-ul mesajului de editat. Apoi vom implementa în funcția `saveMessage` cererea de tip PUT.
-
-```javascript
-function editMessage(id) {
-    //get the values from the server
-    axios.get('/messages/'+id).then(function(result) {
-        //display values in the form
-        $('#id').val(result.data.id)
-        $('#name').val(result.data.name)
-        $('#subject').val(result.data.subject)
-        $('#message').val(result.data.mesage) 
-    }).catch(function(err) {
-        console.log(err)
-        alert('Could not find resource')
-    })
-}
-```
-
-În final vom adăuga pe ramura if din funcția `saveMessage` apelul către endpoint-ul `PUT /messages/:id`
-
-```javascript
-axios.put('/messages/'+id, {
-    name: name,
-    subject: subject,
-    message: message
-}).then(function(result) {
-    showMessages()
-    $(event.target).trigger("reset")
-}).catch(function(err) {
-    alert('Resource could not be saved')
-})
 ```
 
 ## Implementare metodă ștergere \(DELTE\)
@@ -264,12 +231,15 @@ axios.put('/messages/'+id, {
 Ștergerea unui mesaj se va realiza implementând o funcție ce primește ca parametru id-ul resursei și realizează o cerere de tip DELETE către endpoint-ul `/messages/:id`
 
 ```javascript
-deleteMessage(id) {
-    axios.delete('/messages/'+id).then(function(result) {
+async deleteMessage(id) {
+    try {
+        let url = '/messages/' + id
+        let result = await fetch(url, {method: 'DELETE'})
         showMessages()
-    }).catch(function(err) {
-        alert('Resource could not delete resource')
-    }) 
+     } catch(err) {
+         alert('unable to delete message')
+     }
+     
 }
 ```
 
