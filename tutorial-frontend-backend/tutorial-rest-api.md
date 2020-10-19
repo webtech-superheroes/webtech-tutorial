@@ -69,7 +69,7 @@ Primul parametru reprezintă calea din adresa url. Al doilea parametru este un a
 app.listen(8080)
 ```
 
-Pentru a rula programul deschid fisierul `server.js` și apăs butonul RUN
+Pentru a rula programul execut`node server.js` 
 
 * [ ] TODO: crează un director denumit `frontend`
 * [ ] TODO: adaugă în directorul creat un fișier `index.html`
@@ -122,7 +122,8 @@ Metoda returnează un obiect de tip `Promise` pentru care trebuie să specific f
 ```javascript
 sequelize.authenticate().then(() => {
     console.log("Connected to database")
-}).catch(() => {
+}).catch((err) => {
+    console.log(err)
     console.log("Unable to connect to database")
 })
 ```
