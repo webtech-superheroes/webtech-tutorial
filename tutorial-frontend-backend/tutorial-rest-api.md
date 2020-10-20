@@ -4,6 +4,8 @@ Un API RESTful reprezintă o metodă de a expune date și de a realiza operații
 
 În acest exercițiu construim un server web cu ajutorul NodeJS și al framework-ului ExpressJS. Datele sunt stocate într-o bază de date relațională MySQL. Accesul la date se face prin Sequelize.
 
+![](../.gitbook/assets/00001-arhitectura.jpg)
+
 ## 1. Cum inițializez o aplicație NodeJS?
 
 Pentru a inițializa o aplicație NodeJS execut următoarea comandă din terminal si completez detaliile pentru proiect
