@@ -18,7 +18,7 @@
 ## PROGRESSIVE WEB APPS \(PWA\)
 
 * [WebTech Hub app](progressive-web-apps-pwa/webtech-hub-app.md)
-* [Arhitectura aplicașiei](progressive-web-apps-pwa/arhitectura-aplicasiei.md)
+* [Arhitectura aplicației](progressive-web-apps-pwa/arhitectura-aplicatiei.md)
 * [Resurse](progressive-web-apps-pwa/resurse.md)
 
 ## Operații pe date și persistență
