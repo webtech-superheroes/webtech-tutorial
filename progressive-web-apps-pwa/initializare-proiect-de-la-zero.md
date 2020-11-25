@@ -7,8 +7,6 @@ Pentru a vă realiza structura proiectului pe modelul exemplificat la seminar su
 1. Realizați o clonă locală a proiectului
 2. Creați un workspace in Visual Studio cu directorul proiectului
 
-
-
 ### Inițializare frontend
 
 Inițializarea aplicației de frontend se face folosind utilitarul `create-react-app`
