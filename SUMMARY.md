@@ -19,6 +19,7 @@
 
 * [WebTech Hub app](progressive-web-apps-pwa/webtech-hub-app.md)
 * [Arhitectura aplicației](progressive-web-apps-pwa/arhitectura-aplicatiei.md)
+* [Instructiuni instalare](progressive-web-apps-pwa/instructiuni-instalare.md)
 * [Resurse](progressive-web-apps-pwa/resurse.md)
 
 ## Operații pe date și persistență
