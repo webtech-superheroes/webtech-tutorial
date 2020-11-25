@@ -7,7 +7,7 @@ Pentru a vă realiza structura proiectului pe modelul exemplificat la seminar su
 1. Realizați o clonă locală a proiectului
 2. Creați un workspace in Visual Studio cu directorul proiectului
 
-### Inițializare backend
+
 
 ### Inițializare frontend
 
@@ -23,6 +23,42 @@ Pentru a inițiaza aplicația de frontend executați comanda
 
 ```bash
 npx create-react-app frontend
+```
+
+### Inițializare backend
+
+Adăugați un director backend și un fișier server.js
+
+Navigați în directorul backend
+
+```bash
+cd backend
+```
+
+Inițializarea aplicației de backend se face folosind utilitarul `npm init` 
+
+```bash
+npm init -y
+```
+
+În urma acestei comenzi veți obține fișierul package.json în care sunt salvate dependințele aplicației.
+
+Pentru a adăuga dependințele necesare executați următoarle comenzi:
+
+```bash
+npm install --save sequelize
+npm install --save express
+npm install --save mysql2
+```
+
+Realizați următoarea structură de directoare
+
+```bash
+backend
+  |__config
+  |__routes
+  |__models
+  |__controllers
 ```
 
 ### Publicare modificări pe git
@@ -51,4 +87,10 @@ Pentru a actualiza un repository cu cele mai recente modificări apelați comand
 ```bash
 git pull
 ```
+
+### Pentru cei grăbiți
+
+Am adăugat în atașamentul acestui tutorial un script care realizează structura proiectului pentru voi. Tot ce rămâne de făcut e să il rulați din bash în directorul de proiect și să publicați structura pe git.
+
+{% file src="../.gitbook/assets/project-setup.sh" caption="project-setup.sh" %}
 
