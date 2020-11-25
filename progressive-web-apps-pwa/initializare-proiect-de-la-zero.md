@@ -88,7 +88,11 @@ git pull
 
 ### Pentru cei grăbiți
 
-Am adăugat în atașamentul acestui tutorial un script care realizează structura proiectului pentru voi. Tot ce rămâne de făcut e să il rulați din bash în directorul de proiect și să publicați structura pe git.
+Am adăugat în atașamentul acestui tutorial un script care realizează structura proiectului. Tot ce rămâne de făcut e să il rulați din bash în directorul de proiect și să publicați structura pe git.
+
+```bash
+./project-setup.sh
+```
 
 {% file src="../.gitbook/assets/project-setup.sh" caption="project-setup.sh" %}
 
