@@ -110,42 +110,42 @@ Editarea se va face preluând datele cu GET și în final cu cerere de tip PUT c
 
 Până acum am definit documentele HTML ca fiind o structură de text statică ce va fi afișată de către browser în funcție de modul în care sunt interpretate tag-urile folosite.
 
-În acest pas vom folosi axios pentru a prelua date de server in format JSON, apoi parcurgând acele date vom construi dinamic codul HTML pentru a afșa tabelul. În final îl vom insera în pagină în div-ul a cărui id definit este `table` folosind funcția html din JQuery.
+În acest pas vom folosi axios pentru a prelua date de server in format JSON, apoi parcurgând acele date vom construi dinamic codul HTML pentru a afșa tabelul. În final îl vom insera în pagină în div-ul a cărui id definit este `table` folosind proprietatea innerHTML
 
 ```javascript
 async function showMessages() {
-    try {
-        let results = await fetch('/messages').then(response => response.json())
-    
-    
-        let html = ` <table style="width:500px;">
-                <tr>
-                    <th>ID</th>
-                    <th>Subject</th>
-                    <th>Name</th> 
-                    <th>Message</th>
-                    <th>Actions</th>
-                </tr>`
-    
-        results.data.forEach(function(element) {
-            html += `<tr>
-                        <td>${element.id}</td>
-                        <td>${element.name}</td>
-                        <td>${element.subject}</td>
-                        <td>${element.message}</td>
-                        <td>
-                            <button onClick="editMessage(${element.id})">Edit</button>
-                            <button onClick="deleteMessage(${element.id})">Delete</button>
-                        </td>
-                    </tr>`
-        })
-    
-        html += `</table>`
-        document.getElementById('#table').innerHTML = html
-    }).catch(function(error) {
-        console.log(error)
-    })
-}
+            try {
+                let results = await fetch('/messages').then(response => response.json())
+            
+            
+                let html = ` <table style="width:500px;">
+                        <tr>
+                            <th>ID</th>
+                            <th>Subject</th>
+                            <th>Name</th> 
+                            <th>Message</th>
+                            <th>Actions</th>
+                        </tr>`
+            
+                results.forEach(function(element) {
+                    html += `<tr>
+                                <td>${element.id}</td>
+                                <td>${element.name}</td>
+                                <td>${element.subject}</td>
+                                <td>${element.message}</td>
+                                <td>
+                                    <button onClick="editMessage(${element.id})">Edit</button>
+                                    <button onClick="deleteMessage(${element.id})">Delete</button>
+                                </td>
+                            </tr>`
+                })
+            
+                html += `</table>`
+                document.getElementById('content').innerHTML = html
+            } catch (error) {
+                console.log(error)
+            }
+        }
 ```
 
 Pentru a testa funcția o vom apela pe eveninimentul `onload`
