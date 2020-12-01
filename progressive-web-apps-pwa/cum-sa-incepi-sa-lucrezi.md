@@ -11,15 +11,16 @@
 ### Implementare componenta backend
 
 1. Identificarea unui model cheie din aplicație
-2. Definirea modelului identificat și structurarea tabelului \([sequelize.define](https://sequelize.org/master/manual/model-basics.html#model-definition)\)
-3. Sincronizare structură tabele \([sequelize.sync](https://sequelize.org/master/manual/model-basics.html#synchronizing-all-models-at-once)\)
-4. Definirea rutelor pentru fiecare operație CRUD \([express.Router](https://expressjs.com/en/guide/routing.html#express-router)\)
+2. Definirea modelului identificat și structurarea tabelului \(vezi [sequelize.define](https://sequelize.org/master/manual/model-basics.html#model-definition)\)
+3. Sincronizare structură tabele \(vezi [sequelize.sync](https://sequelize.org/master/manual/model-basics.html#synchronizing-all-models-at-once) sau scriptul pentru realizare structura db\)
+4. Definirea rutelor pentru fiecare operație CRUD \(vezi [express.Router](https://expressjs.com/en/guide/routing.html#express-router)\)
 5. Definirea metodelor de controller pentru fiecare operație CRUD
-6. Testare metode CRUD în Postman
+6. Implementare validări la nivel de controller / model
+7. Testare metode CRUD în Postman
 
 ### Implementare componenta frontend
 
-1. Definirea componenta container
+1. Definire componenta container
 2. Implementare cereri HTTP catre backend
 3. Definire componente de prezentare
 
