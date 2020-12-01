@@ -220,6 +220,7 @@ async function saveMessage(event) {
             body: JSON.stringify(data)
         }).then(response => response.json())
         
+        event.target.reset()
         showMessages()
     } catch(err) {
         alert('unable to save message')
