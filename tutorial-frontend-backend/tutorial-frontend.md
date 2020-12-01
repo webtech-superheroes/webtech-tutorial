@@ -191,12 +191,12 @@ Următorul pas ar fi să determin dacă este vorba de o operație de editare a u
 async function saveMessage(event) {
     event.preventDefault()
 
-    let id = event.target.id
+    let id = event.target.id.value
     
     let data = {
-        name: event.target.name,
-        subject: event.target.subject,
-        message: event.target.message
+        name: event.target.name.value,
+        subject: event.target.subject.value,
+        message: event.target.message.value
     }
     
     let url = ''
@@ -215,16 +215,16 @@ async function saveMessage(event) {
         let result = await fetch(url, {
             method: method, 
             headers: {
-              'Content-Type': 'application/json'
+            'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
-         }).then(response => response.json())
-         
-         showMessages()
-     } catch(err) {
-         alert('unable to save message')
-     }
-     
+        }).then(response => response.json())
+        
+        showMessages()
+    } catch(err) {
+        alert('unable to save message')
+    }
+    
 }
 ```
 
