@@ -233,7 +233,7 @@ async function saveMessage(event) {
 Ștergerea unui mesaj se va realiza implementând o funcție ce primește ca parametru id-ul resursei și realizează o cerere de tip DELETE către endpoint-ul `/messages/:id`
 
 ```javascript
-async deleteMessage(id) {
+async function deleteMessage(id) {
     try {
         let url = '/messages/' + id
         let result = await fetch(url, {method: 'DELETE'})
