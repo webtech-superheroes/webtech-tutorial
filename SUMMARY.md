@@ -22,6 +22,7 @@
 * [Instructiuni instalare](progressive-web-apps-pwa/instructiuni-instalare.md)
 * [Initializare proiect de la zero](progressive-web-apps-pwa/initializare-proiect-de-la-zero.md)
 * [Cum să începi să lucrezi](progressive-web-apps-pwa/cum-sa-incepi-sa-lucrezi.md)
+* [Metode CRUD](progressive-web-apps-pwa/metode-crud.md)
 * [Resurse](progressive-web-apps-pwa/resurse.md)
 
 ## Operații pe date și persistență

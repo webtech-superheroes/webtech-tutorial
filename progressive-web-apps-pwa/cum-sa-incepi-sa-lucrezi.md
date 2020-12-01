@@ -5,7 +5,8 @@
 1. Inițializarea proiectului
 2. Inițializarea bazei de date
 3. Realizarea fișierului json de configurare pentru baza de date în directorul config
-4. Implementare mecanism automat de incărcare modele \(vezi exemplu de [aici](https://github.com/webtech-superheroes/webtech-hub/blob/master/backend/models/index.js)\)
+4. Implementare mecanism automat de incărcare modele \(exemplu de [aici](https://github.com/webtech-superheroes/webtech-hub/blob/master/backend/models/index.js)\)
+5. Implementare script realizare structura db și date de test \(exemplu [aici](https://github.com/webtech-superheroes/webtech-hub/blob/master/backend/createdb.js)\)
 
 ### Implementare componenta backend
 
