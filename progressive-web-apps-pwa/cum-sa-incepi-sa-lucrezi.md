@@ -22,5 +22,9 @@
 3. Definire componente de prezentare
 4. Implementare cereri HTTP catre backend
 
+Acum adaugă mici detalii ...
+
+![](../.gitbook/assets/64848acfc6674200aa67184117d76249.jpg)
+
 
 
