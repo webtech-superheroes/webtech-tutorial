@@ -7,20 +7,20 @@
 3. Realizarea fișierului json de configurare pentru baza de date în directorul config
 4. Implementare mecanism automat de incărcare modele \(vezi exemplu de [aici](https://github.com/webtech-superheroes/webtech-hub/blob/master/backend/models/index.js)\)
 
-### Implementare backend
+### Implementare componenta backend
 
 1. Identificarea unui model cheie din aplicație
-2. Definirea modelului identificat și structurarea tabelului
-3. Definirea rutelor pentru fiecare operație CRUD
-4. Definirea metodelor de controller pentru fiecare operație CRUD
-5. Testare metode CRUD în Postman
+2. Definirea modelului identificat și structurarea tabelului \([sequelize.define](https://sequelize.org/master/manual/model-basics.html#model-definition)\)
+3. Sincronizare structură tabele \([sequelize.sync](https://sequelize.org/master/manual/model-basics.html#synchronizing-all-models-at-once)\)
+4. Definirea rutelor pentru fiecare operație CRUD \([express.Router](https://expressjs.com/en/guide/routing.html#express-router)\)
+5. Definirea metodelor de controller pentru fiecare operație CRUD
+6. Testare metode CRUD în Postman
 
-### Implementare frontend
+### Implementare componenta frontend
 
 1. Definirea componenta container
-2. Adaugare componenta in router
+2. Implementare cereri HTTP catre backend
 3. Definire componente de prezentare
-4. Implementare cereri HTTP catre backend
 
 Acum adaugă mici detalii ...
 
