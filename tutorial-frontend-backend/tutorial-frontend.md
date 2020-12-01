@@ -114,38 +114,38 @@ Până acum am definit documentele HTML ca fiind o structură de text statică c
 
 ```javascript
 async function showMessages() {
-            try {
-                let results = await fetch('/messages').then(response => response.json())
-            
-            
-                let html = ` <table style="width:500px;">
-                        <tr>
-                            <th>ID</th>
-                            <th>Subject</th>
-                            <th>Name</th> 
-                            <th>Message</th>
-                            <th>Actions</th>
-                        </tr>`
-            
-                results.forEach(function(element) {
-                    html += `<tr>
-                                <td>${element.id}</td>
-                                <td>${element.name}</td>
-                                <td>${element.subject}</td>
-                                <td>${element.message}</td>
-                                <td>
-                                    <button onClick="editMessage(${element.id})">Edit</button>
-                                    <button onClick="deleteMessage(${element.id})">Delete</button>
-                                </td>
-                            </tr>`
-                })
-            
-                html += `</table>`
-                document.getElementById('content').innerHTML = html
-            } catch (error) {
-                console.log(error)
-            }
-        }
+    try {
+        let results = await fetch('/messages').then(response => response.json())
+    
+    
+        let html = ` <table style="width:500px;">
+                <tr>
+                    <th>ID</th>
+                    <th>Subject</th>
+                    <th>Name</th> 
+                    <th>Message</th>
+                    <th>Actions</th>
+                </tr>`
+    
+        results.forEach(function(element) {
+            html += `<tr>
+                        <td>${element.id}</td>
+                        <td>${element.name}</td>
+                        <td>${element.subject}</td>
+                        <td>${element.message}</td>
+                        <td>
+                            <button onClick="editMessage(${element.id})">Edit</button>
+                            <button onClick="deleteMessage(${element.id})">Delete</button>
+                        </td>
+                    </tr>`
+        })
+    
+        html += `</table>`
+        document.getElementById('content').innerHTML = html
+    } catch (error) {
+        console.log(error)
+    }
+}
 ```
 
 Pentru a testa funcția o vom apela pe eveninimentul `onload`
