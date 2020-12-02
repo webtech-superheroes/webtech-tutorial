@@ -20,10 +20,13 @@
 * [WebTech Hub app](progressive-web-apps-pwa/webtech-hub-app.md)
 * [Arhitectura aplicației](progressive-web-apps-pwa/arhitectura-aplicatiei.md)
 * [Instructiuni instalare](progressive-web-apps-pwa/instructiuni-instalare.md)
-* [Initializare proiect de la zero](progressive-web-apps-pwa/initializare-proiect-de-la-zero.md)
-* [Cum să începi să lucrezi](progressive-web-apps-pwa/cum-sa-incepi-sa-lucrezi.md)
-* [Metode CRUD](progressive-web-apps-pwa/metode-crud.md)
 * [Resurse](progressive-web-apps-pwa/resurse.md)
+
+## Dezvoltare proiect
+
+* [Cum să începi să lucrezi](dezvoltare-proiect/cum-sa-incepi-sa-lucrezi.md)
+* [Initializare structura proiect](dezvoltare-proiect/initializare-proiect-de-la-zero.md)
+* [Metode CRUD](dezvoltare-proiect/metode-crud.md)
 
 ## Operații pe date și persistență
 

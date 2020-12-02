@@ -2,7 +2,7 @@
 
 ### Configurarea proiectului
 
-1. Inițializarea proiectului
+1. Inițializarea structura proiect
 2. Inițializarea bazei de date
 3. Realizarea fișierului json de configurare pentru baza de date în directorul config \(exemplu [aici](https://github.com/webtech-superheroes/webtech-hub/blob/master/backend/config/db.sample.json)\)
 4. Implementare mecanism automat de incărcare modele \(exemplu [aici](https://github.com/webtech-superheroes/webtech-hub/blob/master/backend/models/index.js)\)

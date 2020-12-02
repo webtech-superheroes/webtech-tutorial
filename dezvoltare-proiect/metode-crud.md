@@ -1,5 +1,7 @@
 # Metode CRUD
 
+Această secțiune include referințele pentru implementarea metodelor CRUD pentru backend
+
 <table>
   <thead>
     <tr>

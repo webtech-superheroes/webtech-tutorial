@@ -1,4 +1,4 @@
-# Initializare proiect de la zero
+# Initializare structura proiect
 
 Pentru a vă realiza structura proiectului pe modelul exemplificat la seminar sunt necesari următorii pași
 
