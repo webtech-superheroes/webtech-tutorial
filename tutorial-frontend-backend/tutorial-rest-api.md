@@ -75,13 +75,13 @@ Pentru a rula programul execut`node server.js`
 
 * [ ] TODO: crează un director denumit `frontend`
 * [ ] TODO: adaugă în directorul creat un fișier `index.html`
-* [ ] TODO: deschide în browser aplicația accesând adresa URL \([http://ip:8080](http://ip:8080)\)
+* [ ] TODO: deschide în browser aplicația accesând adresa URL \(http://localhost:8080\)
 
 ## 3. Cum instalez MySQL și cum creez baza de date?
 
 Detaliile pentru a configura MySQL în Cloud9 sunt dispoibile [aici](../configurare-mediu-de-lucru/mysql.md).
 
-În continuare adaugă baza de date cu numele **profile** executand comanda:
+În continuare adaugă baza de date cu numele **profile** executand în consola mysql comanda:
 
 ```sql
 create database profile;
@@ -92,7 +92,7 @@ create database profile;
 
 ## 4. Cum mă conectez la baza de date din NodeJS folosind Sequelize?
 
-Sequelize este o bibliotecă orientată obiect de tip ORM \(object-relational mapping\). Permite realizarea unei reperezentări a tabelelor din baza de date prin modele și relații între modele. Un model este un obiect ce permite operațiile standard pe baza de date \(Create, Read, Update, Delete\). Documentația oficială este accesibilă aici: [http://docs.sequelizejs.com/](http://docs.sequelizejs.com/)
+Sequelize este o bibliotecă orientată obiect de tip ORM \(object-relational mapping\). Permite realizarea unei reperezentări a tabelelor din baza de date prin modele și relații între modele. Un model este un o clasă permite operațiile standard pe baza de date \(Create, Read, Update, Delete\). Documentația oficială este accesibilă aici: [http://docs.sequelizejs.com/](http://docs.sequelizejs.com/)
 
 Pentru a folosi Sequelize în proiect sunt necesare pachetele **sequelize** și **mysql2** pe care le vom instala prin `npm`
 
