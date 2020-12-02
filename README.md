@@ -23,6 +23,13 @@ Scopul tutorialului este de a fi un ghid în a realiza primii pași în dezvolta
 
 Codul pentru aplicația exemplificată este disponibil aici: [https://github.com/webtech-superheroes/webtech-hub](https://github.com/webtech-superheroes/webtech-hub)
 
+1. [Prezentare ](progressive-web-apps-pwa/webtech-hub-app.md)
+2. [Arhitectura aplicației](progressive-web-apps-pwa/arhitectura-aplicatiei.md)
+3. [Instrucțiuni instalare](progressive-web-apps-pwa/instructiuni-instalare.md)
+4. [Inițializare proiect](progressive-web-apps-pwa/initializare-proiect-de-la-zero.md)
+5. [Cum să începi să lucrezi](progressive-web-apps-pwa/cum-sa-incepi-sa-lucrezi.md)
+6. [Metode CRUD](progressive-web-apps-pwa/metode-crud.md)
+
 ## Operații pe date și persistență
 
 În acest tutorial sunt exemplificate operațiile pe date și persistența într-o bază de date relațională
