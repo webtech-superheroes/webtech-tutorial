@@ -26,9 +26,12 @@ Codul pentru aplicația exemplificată este disponibil aici: [https://github.com
 1. [Prezentare ](progressive-web-apps-pwa/webtech-hub-app.md)
 2. [Arhitectura aplicației](progressive-web-apps-pwa/arhitectura-aplicatiei.md)
 3. [Instrucțiuni instalare](progressive-web-apps-pwa/instructiuni-instalare.md)
-4. [Inițializare proiect](dezvoltare-proiect/initializare-proiect-de-la-zero.md)
-5. [Cum să începi să lucrezi](dezvoltare-proiect/cum-sa-incepi-sa-lucrezi.md)
-6. [Metode CRUD](dezvoltare-proiect/metode-crud.md)
+4. 
+## Dezvoltare proiect
+
+1. [Cum să începi să lucrezi](dezvoltare-proiect/cum-sa-incepi-sa-lucrezi.md)
+2. [Inițializare structura proiect](dezvoltare-proiect/initializare-proiect-de-la-zero.md)
+3. [Metode CRUD](dezvoltare-proiect/metode-crud.md)
 
 ## Operații pe date și persistență
 
