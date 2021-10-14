@@ -8,7 +8,5 @@ Componenta de persistență a datelor este asigurată de serverul MySQL care per
 
 În figura de mai jos sunt expuse legăturile între cele trei componente, protocolul de comunicare și fluxul de date.
 
-![Arhitectura aplica&#x21B;iei WebTech Hub \(click pentru a extinde\)](../.gitbook/assets/diagrama-arhitectura-spa.png)
-
-
+![Arhitectura aplicației WebTech Hub (click pentru a extinde)](<../.gitbook/assets/diagrama arhitectura spa.png>)
 

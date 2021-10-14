@@ -48,13 +48,13 @@ Din consola MySQL voi rula comenzi SQL. Sfârșitul unei comenzi este marcat de 
 
 De exemplu, pentru a crea o nouă baza de date executăm comanda `CREATE DATABASE`
 
-```text
+```
 CREATE DATABASE database_name;
 ```
 
 Pentru a lista bazele de date disponibile executam următoarea comandă:
 
-```text
+```
 SHOW DATABASES;
 ```
 
@@ -63,4 +63,3 @@ SHOW DATABASES;
 ## Revenire în consola linux
 
 Pentru a părăsi utilitarul mysql, tastează comanda `exit`
-

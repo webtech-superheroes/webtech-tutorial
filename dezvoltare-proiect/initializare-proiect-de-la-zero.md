@@ -61,7 +61,7 @@ backend
 
 ### Publicare modificări pe git
 
-Anterior publicării pe git vă recomand să adăugați un fișier `.gitignore` care să excludă directoarele node\_modules de la versionare. 
+Anterior publicării pe git vă recomand să adăugați un fișier `.gitignore` care să excludă directoarele node_modules de la versionare. 
 
 Continutul lui trebuie să cuprindă numele directoarelor sau fișierelor excluse precum în exemplul de mai jos.
 
@@ -82,7 +82,7 @@ Publicarea pe repository-ul origin se face apelând comanda git push
 git push
 ```
 
-\(nota: structura de directoare va fi publicata doar in urma adaugării de fișiere\)
+(nota: structura de directoare va fi publicata doar in urma adaugării de fișiere)
 
 Pentru a actualiza un repository exitent cu cele mai recente modificări apelați comanda git pull
 
@@ -98,7 +98,7 @@ Am adăugat în atașamentul acestui tutorial un script care realizează structu
 ./project-setup.sh
 ```
 
-{% file src="../.gitbook/assets/project-setup.sh" caption="project-setup.sh" %}
-
-
+{% file src="../.gitbook/assets/project-setup.sh" %}
+project-setup.sh
+{% endfile %}
 

@@ -18,7 +18,6 @@ Serverul web va prelucra această cerere și va returna continutul text în cazu
 
 Să ne imaginăm că aplicația noastră va permite gestionarea de mesaje pe o pagină personală.
 
-![application interface](../.gitbook/assets/01101-html%20%281%29.png)
+![application interface](<../.gitbook/assets/01101-html (1).png>)
 
-Utilizatorul are posibilitatea să realizeze operațiile CRUD \(create, read, update, delete\) pe datele stocate în baza de date.
-
+Utilizatorul are posibilitatea să realizeze operațiile CRUD (create, read, update, delete) pe datele stocate în baza de date.

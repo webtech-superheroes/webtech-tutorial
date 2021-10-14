@@ -1,6 +1,6 @@
 # Construirea interfeței folosind HTML și JavaScript
 
-În prima parte am construit un server web capabil să servească fișiere statice și să expună date pentru a realiza operațiile de creare, citire, actualizare și ștergere \(CRUD\). În a doua parte vom dezvolta o interfață minimalistă cu scopul de a exemplifica metodele de comunicare între componenta de frontend și componenta de backend.
+În prima parte am construit un server web capabil să servească fișiere statice și să expună date pentru a realiza operațiile de creare, citire, actualizare și ștergere (CRUD). În a doua parte vom dezvolta o interfață minimalistă cu scopul de a exemplifica metodele de comunicare între componenta de frontend și componenta de backend.
 
 În general dezvoltarea de frontend este un proces iterativ ce presupune realizarea de schițe de design întermediare, care sunt validate cu utilizatorii, transformarea acestora în cod HTML și CSS, implementarea de cod care gestionează interacțiunea cu utilizatorul, testare și lansare în producție.
 
@@ -38,7 +38,7 @@ Pornim de la structura unui document HTML în care vom adăuga codul pentru a re
 </html>
 ```
 
-Elementele HTML necesare realizării unui tabel - [https://www.w3schools.com/html/html\_tables.asp](https://www.w3schools.com/html/html_tables.asp)
+Elementele HTML necesare realizării unui tabel - [https://www.w3schools.com/html/html_tables.asp](https://www.w3schools.com/html/html_tables.asp)
 
 Codul pentru a reprezenta un tabel va arăta astfel:
 
@@ -66,7 +66,7 @@ Codul pentru a reprezenta un tabel va arăta astfel:
 </div>
 ```
 
-Elementele HTML necesare realizării unui formular - [https://www.w3schools.com/html/html\_forms.asp](https://www.w3schools.com/html/html_forms.asp)
+Elementele HTML necesare realizării unui formular - [https://www.w3schools.com/html/html_forms.asp](https://www.w3schools.com/html/html_forms.asp)
 
 Iar codul pentru a reprezenta un formular va fi acesta:
 
@@ -106,7 +106,7 @@ Editarea se va face preluând datele cu GET și în final cu cerere de tip PUT c
 </script>
 ```
 
-## Citire și afișare date de pe server \(GET\)
+## Citire și afișare date de pe server (GET)
 
 Până acum am definit documentele HTML ca fiind o structură de text statică ce va fi afișată de către browser în funcție de modul în care sunt interpretate tag-urile folosite.
 
@@ -163,7 +163,7 @@ Observăm în acest exemplu câteva elemente specifice de limbaj precum modul î
 
 Am folosit funcția `fetch` pentru a iniția o cerere GET către backend. Imediat ce primim răspunsul de la server îl vom transforma în JSON. Apoi cu rezultatul obținut construim tabelul 
 
-Pentru că folosim metodă asincronă rezultatul returnat de apel va fi un obiect de tip `Promise`. Pe acest obiect vom transmite două funcții către cele două metode `then()` și `catch()` care vor fi apelate atunci când cererea este îndeplinită cu succes, respectiv dacă a intervenit o eroare. Detaliile privind acest mecanism sunt descrise aici: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+Pentru că folosim metodă asincronă rezultatul returnat de apel va fi un obiect de tip `Promise`. Pe acest obiect vom transmite două funcții către cele două metode `then()` și `catch()` care vor fi apelate atunci când cererea este îndeplinită cu succes, respectiv dacă a intervenit o eroare. Detaliile privind acest mecanism sunt descrise aici: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 ## Prelucrare date din formular
 
@@ -229,7 +229,7 @@ async function saveMessage(event) {
 }
 ```
 
-## Implementare metodă ștergere \(DELTE\)
+## Implementare metodă ștergere (DELTE)
 
 Ștergerea unui mesaj se va realiza implementând o funcție ce primește ca parametru id-ul resursei și realizează o cerere de tip DELETE către endpoint-ul `/messages/:id`
 
@@ -245,4 +245,3 @@ async function deleteMessage(id) {
      
 }
 ```
-

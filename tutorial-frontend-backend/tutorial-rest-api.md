@@ -17,7 +17,7 @@ npm init
 Urmărește instrucțiunile de pe ecran și completez următoarele detalii:
 
 * Name - numele proiectului
-* Version - versiunea proiectului \(default\) - trec peste apasand ENTER
+* Version - versiunea proiectului (default) - trec peste apasand ENTER
 * Description - o descriere succintă
 * Entry point - fișierul care pornește aplicația: server.js
 * Test command - trec peste apasand ENTER
@@ -37,7 +37,7 @@ Confrim dacă datele introduse sunt corecte. Dacă am executat comanda cu succes
 
 ## 2. Cum construiesc un server HTTP folosind ExpressJS?
 
-ExpressJS este un framework minimalist pentru dezvoltarea de aplicații web, mobile sau servicii web REST \(API\).
+ExpressJS este un framework minimalist pentru dezvoltarea de aplicații web, mobile sau servicii web REST (API).
 
 Pentru descărca modulul și a include express în lista de dependințe execută comanda
 
@@ -75,7 +75,7 @@ Pentru a rula programul execut`node server.js`
 
 * [ ] TODO: crează un director denumit `frontend`
 * [ ] TODO: adaugă în directorul creat un fișier `index.html`
-* [ ] TODO: deschide în browser aplicația accesând adresa URL \(http://localhost:8080\)
+* [ ] TODO: deschide în browser aplicația accesând adresa URL (http://localhost:8080)
 
 ## 3. Cum instalez MySQL și cum creez baza de date?
 
@@ -92,7 +92,7 @@ create database profile;
 
 ## 4. Cum mă conectez la baza de date din NodeJS folosind Sequelize?
 
-Sequelize este o bibliotecă orientată obiect de tip ORM \(object-relational mapping\). Permite realizarea unei reperezentări a tabelelor din baza de date prin modele și relații între modele. Un model este un o clasă permite operațiile standard pe baza de date \(Create, Read, Update, Delete\). Documentația oficială este accesibilă aici: [http://docs.sequelizejs.com/](http://docs.sequelizejs.com/)
+Sequelize este o bibliotecă orientată obiect de tip ORM (object-relational mapping). Permite realizarea unei reperezentări a tabelelor din baza de date prin modele și relații între modele. Un model este un o clasă permite operațiile standard pe baza de date (Create, Read, Update, Delete). Documentația oficială este accesibilă aici: [http://docs.sequelizejs.com/](http://docs.sequelizejs.com)
 
 Pentru a folosi Sequelize în proiect sunt necesare pachetele **sequelize** și **mysql2** pe care le vom instala prin `npm`
 
@@ -117,7 +117,7 @@ const sequelize = new Sequelize('profile', 'root', '', {
 
 Fac distincție între obiectul `sequelize` și clasa `Sequelize` scrisă cu literă mare. În contstructorul clasei primul parametru este numele bazei de date, al doilea prametru este utilizatorul și al treilea este parola. Ultimul parametru este un obiect ce descrie date despre tipul de bază de date folosit și adresa serverului.
 
-Pentru a realiza conexiunea la baza de date utilizez metoda **authenticate\(\)**
+Pentru a realiza conexiunea la baza de date utilizez metoda **authenticate()**
 
 Metoda returnează un obiect de tip `Promise` pentru care trebuie să specific funcțiile pe care să le apeleze atunct când conexiunea se realizează cu succes, respectiv întâmpin o eroare.
 
@@ -135,7 +135,7 @@ sequelize.authenticate().then(() => {
 
 ## 5. Cum definesc modele pentru tabele folosind Sequelize?
 
-Un model este o reprezentare a unui tabel în codul sursă al aplicației. Sequelize permite definirea de modele folosind funcția _**define\(\)**_
+Un model este o reprezentare a unui tabel în codul sursă al aplicației. Sequelize permite definirea de modele folosind funcția _**define()**_
 
 Primul parametrul al funcției este numele tabelului. O convenție presupusă de lucru cu Sequelize este că numele tabelului va fi definit în limba engleză la plural. Al doilea parametru este un obiect care descrie structura tabelului prin perechi cheie:valoare, unde cheia este numele coloanei și valoarea este tipul de date.
 
@@ -149,13 +149,13 @@ const Messages = sequelize.define('messages', {
 
 Mai multe detalii despre definirea de modele - [http://docs.sequelizejs.com/manual/tutorial/models-definition.html](http://docs.sequelizejs.com/manual/tutorial/models-definition.html)
 
-Lista cu tipurile de date suportate de Sequelize - [http://docs.sequelizejs.com/manual/tutorial/models-definition.html\#data-types](http://docs.sequelizejs.com/manual/tutorial/models-definition.html#data-types)
+Lista cu tipurile de date suportate de Sequelize - [http://docs.sequelizejs.com/manual/tutorial/models-definition.html#data-types](http://docs.sequelizejs.com/manual/tutorial/models-definition.html#data-types)
 
 Pentru a modela o aplicație este necesar să pornești de la domeniul pe care îl adresează, să identifici entități și relații între entități, să stabilești care sunt proprietățile lor și să identifici tipurile de date corespunzătoare. Este o activitate ce se desfășoară de obicei iterativ și incremenental pe parcursul dezvoltării aplicației. Așa că Sequelize propune un mecanism automat de sincronizare a bazei de date care este descris în pasul următor.
 
 ## 6. Cum creez tabelele în baza de date folosind mecanismul de sincronizare din Sequelize?
 
-Sequelize permite sincronizarea automată a modelelor cu baza de date prin intermediul funcției _**sync\(\)**_
+Sequelize permite sincronizarea automată a modelelor cu baza de date prin intermediul funcției _**sync()**_
 
 Adădugând parametrul `{force: true}` tabelele existente vor fi șterse și vor fi create confrom definiției din model.
 
@@ -187,7 +187,7 @@ Pentru a permite crearea de înregistrări expun o metodă de tip POST.
 
 Fiecare endpoint din API-ul REST este definită de metoda HTTP și numele resursei la care se referă.
 
-```text
+```
 POST /messages
 ```
 
@@ -207,7 +207,7 @@ app.post('/messages', (request, response) => {
 })
 ```
 
-Conținutul trimis în body va fi accesibil pe proprietatea `request.body` ce va fi pasat ca parametru pentru modelul Sequelize în metoda create\(\).
+Conținutul trimis în body va fi accesibil pe proprietatea `request.body` ce va fi pasat ca parametru pentru modelul Sequelize în metoda create().
 
 Metoda **create** Sequelize va genera automat instrucțiunea ``INSERT INTO messages (`subject`, `name`, `message`) VALUES ('test','test','test')``.
 
@@ -229,11 +229,11 @@ Pentru a testa enpoint-ul creat folosim Postman.
 
 Pentru a lista datele dintr-un tabel vom expune două enpoint-uri. Primul care returnează toată lista de mesaje și al doilea care returnează un mesaj după un ID specific.
 
-```text
+```
 GET /messages
 ```
 
-```text
+```
 GET /messages/1
 ```
 
@@ -266,7 +266,7 @@ app.get('/messages/:id', (request, response) => {
 
 Actualizarea unei resurse se realizează prin intermediul metodei PUT
 
-```text
+```
 PUT /messages/1
 ```
 
@@ -302,7 +302,7 @@ Pașii pentru a testa metoda PUT sunt aceiași ca pentru metoda POST.
 
 Ultima metodă permite ștergerea unei resurse
 
-```text
+```
 DELETE /messages/1
 ```
 
@@ -556,6 +556,5 @@ Dacă ai reușit să parcurgi tutorialul până aici, în primul rând felicită
 
 Iată câteva resurse care te vor ajuta să aprofundezi dezvoltarea de servicii web REST:
 
-* [https://www.restapitutorial.com/](https://www.restapitutorial.com/)
+* [https://www.restapitutorial.com/](https://www.restapitutorial.com)
 * [https://medium.com/pixelpoint/oh-man-look-at-your-api-22f330ab80d5](https://medium.com/pixelpoint/oh-man-look-at-your-api-22f330ab80d5)
-
