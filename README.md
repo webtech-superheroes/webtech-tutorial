@@ -1,4 +1,4 @@
-# Home
+# Home - updated from github
 
 ## Configurarea mediului de lucru
 
