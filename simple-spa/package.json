@@ -9,7 +9,7 @@
   "author": "eduardbudacu",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "mysql2": "^1.6.4",
     "sequelize": ">=5.3.0"
   }
